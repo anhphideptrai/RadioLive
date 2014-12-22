@@ -1,16 +1,23 @@
 PODS:
+  - ASOAnimatedButton (1.0.1):
+    - ASOAnimatedButton/BounceButton (= 1.0.1)
+    - ASOAnimatedButton/TwoStateButton (= 1.0.1)
+  - ASOAnimatedButton/BounceButton (1.0.1)
+  - ASOAnimatedButton/TwoStateButton (1.0.1)
   - iOS-Slide-Menu (1.4.4)
   - MarqueeLabel (2.1.0)
   - SCSiriWaveformView (1.0.1)
   - StreamingKit (0.1.25)
 
 DEPENDENCIES:
+  - ASOAnimatedButton (= 1.0.1)
   - iOS-Slide-Menu (= 1.4.4)
   - MarqueeLabel (= 2.1.0)
   - SCSiriWaveformView (= 1.0.1)
   - StreamingKit (= 0.1.25)
 
 SPEC CHECKSUMS:
+  ASOAnimatedButton: 92bb13622b2a7f0f0b106525e21c7b2d21d6ab94
   iOS-Slide-Menu: 7891c4e4180aac2b23fb2e5459ff61b8691a8496
   MarqueeLabel: ec6165fbef95fd11f411637550196b0cc7cbab03
   SCSiriWaveformView: e0d1a769e396a7c1a0bb05e02b539af2c484c56d

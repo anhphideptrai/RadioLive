@@ -12,6 +12,9 @@
 		B2929F8B1A481A1A0058984B /* icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F881A481A1A0058984B /* icon_more.png */; };
 		B2929F8C1A481A1A0058984B /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F891A481A1A0058984B /* icon_share.png */; };
 		B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F8A1A481A1A0058984B /* icon_timer.png */; };
+		B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B2929F911A481C8A0058984B /* AnimationMenuCustom.m */; };
+		B2929F951A481C8A0058984B /* iPad_AnimationMenuCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2929F921A481C8A0058984B /* iPad_AnimationMenuCustom.xib */; };
+		B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2929F931A481C8A0058984B /* iPhone_AnimationMenuCustom.xib */; };
 		B2C94D331A4484A200B9CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D321A4484A200B9CA95 /* main.m */; };
 		B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D351A4484A200B9CA95 /* AppDelegate.m */; };
 		B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D3D1A4484A200B9CA95 /* Images.xcassets */; };
@@ -70,6 +73,10 @@
 		B2929F881A481A1A0058984B /* icon_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_more.png; path = Resource/Images/icon_more.png; sourceTree = "<group>"; };
 		B2929F891A481A1A0058984B /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_share.png; path = Resource/Images/icon_share.png; sourceTree = "<group>"; };
 		B2929F8A1A481A1A0058984B /* icon_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_timer.png; path = Resource/Images/icon_timer.png; sourceTree = "<group>"; };
+		B2929F901A481C8A0058984B /* AnimationMenuCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationMenuCustom.h; sourceTree = "<group>"; };
+		B2929F911A481C8A0058984B /* AnimationMenuCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationMenuCustom.m; sourceTree = "<group>"; };
+		B2929F921A481C8A0058984B /* iPad_AnimationMenuCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPad_AnimationMenuCustom.xib; sourceTree = "<group>"; };
+		B2929F931A481C8A0058984B /* iPhone_AnimationMenuCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhone_AnimationMenuCustom.xib; sourceTree = "<group>"; };
 		B2C94D2D1A4484A200B9CA95 /* Hungary Radio Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungary Radio Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C94D311A4484A200B9CA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C94D321A4484A200B9CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -158,6 +165,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B2929F8E1A481C520058984B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2929F8F1A481C8A0058984B /* AnimationMenu */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B2929F8F1A481C8A0058984B /* AnimationMenu */ = {
+			isa = PBXGroup;
+			children = (
+				B2929F901A481C8A0058984B /* AnimationMenuCustom.h */,
+				B2929F911A481C8A0058984B /* AnimationMenuCustom.m */,
+				B2929F921A481C8A0058984B /* iPad_AnimationMenuCustom.xib */,
+				B2929F931A481C8A0058984B /* iPhone_AnimationMenuCustom.xib */,
+			);
+			name = AnimationMenu;
+			path = Views/AnimationMenu;
+			sourceTree = "<group>";
+		};
 		B2C94D241A4484A200B9CA95 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +206,7 @@
 		B2C94D2F1A4484A200B9CA95 /* Hungary Radio Live */ = {
 			isa = PBXGroup;
 			children = (
+				B2929F8E1A481C520058984B /* Views */,
 				B2C94D5D1A44937600B9CA95 /* Resource */,
 				B2C94D571A4486FE00B9CA95 /* Common */,
 				B2C94D561A4486F400B9CA95 /* ViewControllers */,
@@ -380,6 +408,7 @@
 				B2C94D931A44939200B9CA95 /* VolLess.png in Resources */,
 				B2C94D411A4484A200B9CA95 /* LaunchScreen.xib in Resources */,
 				B2C94D951A44939200B9CA95 /* VolLess@3x.png in Resources */,
+				B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */,
 				B2929F8C1A481A1A0058984B /* icon_share.png in Resources */,
 				B2C94D901A44939200B9CA95 /* Previous@3x.png in Resources */,
 				B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */,
@@ -400,6 +429,7 @@
 				B2C94D8F1A44939200B9CA95 /* Previous@2x.png in Resources */,
 				B2C94D961A44939200B9CA95 /* VolMore.png in Resources */,
 				B2C94D861A44939200B9CA95 /* Next@2x.png in Resources */,
+				B2929F951A481C8A0058984B /* iPad_AnimationMenuCustom.xib in Resources */,
 				B2C94D841A44939200B9CA95 /* linenBack@2x.png in Resources */,
 				B2C94DAE1A45332600B9CA95 /* NavbarBackground@2x.png in Resources */,
 				B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */,
@@ -458,6 +488,7 @@
 				B2C94D9E1A4493F900B9CA95 /* MainViewController.m in Sources */,
 				B2C94DBB1A45CAD700B9CA95 /* SampleQueueId.m in Sources */,
 				B2C94DA61A44948F00B9CA95 /* ChannelsViewController.m in Sources */,
+				B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

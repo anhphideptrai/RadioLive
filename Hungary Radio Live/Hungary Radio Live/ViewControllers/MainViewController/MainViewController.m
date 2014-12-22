@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet SCSiriWaveformView *waveFormView;
 @property (strong, nonatomic) IBOutlet MarqueeLabel *lbChannelInfo;
 @property (nonatomic, strong) STKAudioPlayer *audioPlayer;
+@property (nonatomic) ASOAnimationStyle progressiveORConcurrentStyle;
 
 - (IBAction)actionClickBTChannel:(id)sender;
 - (IBAction)actionChangedVolume:(id)sender;
@@ -62,11 +63,32 @@
     _lbChannelInfo.trailingBuffer = 30.0f;
     _lbChannelInfo.textColor = _orange_color_;
     _lbChannelInfo.text = @"Thien Nguyen - Hungary Radio Live                      Thien Nguyen - Hungary Radio Live                      ";
+    
+    [self.menuButton setOnStateImageName:@"bottomnav_settings_normal.png"];
+    [self.menuButton setOffStateImageName:@"bottomnav_settings_normal.png"];
+    [self.menuButton initAnimationWithFadeEffectEnabled:YES];
+    self.menuItemView = [[[NSBundle mainBundle] loadNibNamed:NAME_XIB_ANIMATION_MENU_VIEW_CONTROLLER owner:self options:nil] lastObject];
+    [self.menuItemView setBackgroundColor:[UIColor clearColor]];
+    NSArray *arrMenuItemButtons = [[NSArray alloc] initWithObjects:self.menuItemView.menuItem1,
+                                   self.menuItemView.menuItem2,
+                                   nil]; // Add all of the defined 'menu item button' to 'menu item view'
+    [self.menuItemView addBounceButtons:arrMenuItemButtons];
+    
+    // Set the bouncing distance, speed and fade-out effect duration here. Refer to the ASOBounceButtonView public properties
+    [self.menuItemView setSpeed:[NSNumber numberWithFloat:0.2f]];
+    [self.menuItemView setBouncingDistance:[NSNumber numberWithFloat:0.3f]];
+    
+    [self.menuItemView setAnimationStyle:ASOAnimationStyleRiseProgressively];
+    self.progressiveORConcurrentStyle = ASOAnimationStyleRiseProgressively;
+    
+    // Set as delegate of 'menu item view'
+    [self.menuItemView setDelegate:self];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
+    [self.menuItemView setAnimationStartFromHere:self.menuButton.frame];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -110,6 +132,28 @@
 {
     return UIStatusBarStyleLightContent;
 }
+- (IBAction)menuButtonAction:(id)sender
+{
+    if ([sender isOn]) {
+        // Show 'menu item view' and expand its 'menu item button'
+        [self.menuButton addCustomView:self.menuItemView];
+        [self.menuItemView expandWithAnimationStyle:self.progressiveORConcurrentStyle];
+    }
+    else {
+        // Collapse all 'menu item button' and remove 'menu item view'
+        [self.menuItemView collapseWithAnimationStyle:self.progressiveORConcurrentStyle];
+        [self.menuButton removeCustomView:self.menuItemView interval:[self.menuItemView.collapsedViewDuration doubleValue]];
+    }
+}
+- (void)didSelectBounceButtonAtIndex:(NSUInteger)index
+{
+    [self.menuButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (IBAction)sendActionForMenuButton:(id)sender{
+    [self.menuButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 #pragma mark - SlideNavigationController Methods -
 
 - (BOOL)slideNavigationControllerShouldDisplayLeftMenu

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <SlideNavigationController.h>
-@interface MainViewController : UIViewController <SlideNavigationControllerDelegate>
-
+#import "ASOTwoStateButton.h"
+#import "ASOBounceButtonView.h"
+#import "ASOBounceButtonViewDelegate.h"
+#import "AnimationMenuCustom.h"
+@interface MainViewController : UIViewController <SlideNavigationControllerDelegate, ASOBounceButtonViewDelegate>
+@property (strong, nonatomic) IBOutlet ASOTwoStateButton *menuButton;
+@property (strong, nonatomic) AnimationMenuCustom *menuItemView;
 @end
