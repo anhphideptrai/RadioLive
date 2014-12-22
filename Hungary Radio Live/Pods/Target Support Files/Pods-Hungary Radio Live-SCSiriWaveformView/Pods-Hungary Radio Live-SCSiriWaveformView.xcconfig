@@ -1,0 +1,1 @@
+PODS_HUNGARY_RADIO_LIVE_SCSIRIWAVEFORMVIEW_OTHER_LDFLAGS = -framework "AVFoundation" -framework "CoreGraphics" -framework "Foundation" -framework "QuartzCore" -framework "UIKit"

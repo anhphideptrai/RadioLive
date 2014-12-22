@@ -1,0 +1,19 @@
+PODS:
+  - iOS-Slide-Menu (1.4.4)
+  - MarqueeLabel (2.1.0)
+  - SCSiriWaveformView (1.0.1)
+  - StreamingKit (0.1.25)
+
+DEPENDENCIES:
+  - iOS-Slide-Menu (= 1.4.4)
+  - MarqueeLabel (= 2.1.0)
+  - SCSiriWaveformView (= 1.0.1)
+  - StreamingKit (= 0.1.25)
+
+SPEC CHECKSUMS:
+  iOS-Slide-Menu: 7891c4e4180aac2b23fb2e5459ff61b8691a8496
+  MarqueeLabel: ec6165fbef95fd11f411637550196b0cc7cbab03
+  SCSiriWaveformView: e0d1a769e396a7c1a0bb05e02b539af2c484c56d
+  StreamingKit: 5b36623e7246cccddb8db3aee79c43bb180a51be
+
+COCOAPODS: 0.35.0
