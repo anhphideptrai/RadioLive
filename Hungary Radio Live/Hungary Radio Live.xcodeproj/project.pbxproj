@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B221F24E1A46DC44004E91FE /* background_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24D1A46DC44004E91FE /* background_wave.png */; };
 		B221F2501A46E738004E91FE /* icon_speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24F1A46E738004E91FE /* icon_speaker.png */; };
+		B2929F8B1A481A1A0058984B /* icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F881A481A1A0058984B /* icon_more.png */; };
+		B2929F8C1A481A1A0058984B /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F891A481A1A0058984B /* icon_share.png */; };
+		B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F8A1A481A1A0058984B /* icon_timer.png */; };
 		B2C94D331A4484A200B9CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D321A4484A200B9CA95 /* main.m */; };
 		B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D351A4484A200B9CA95 /* AppDelegate.m */; };
 		B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D3D1A4484A200B9CA95 /* Images.xcassets */; };
@@ -64,6 +67,9 @@
 		860DE5E5C5541AE954AD6101 /* libPods-Hungary Radio Live.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hungary Radio Live.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221F24D1A46DC44004E91FE /* background_wave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_wave.png; path = Resource/Images/background_wave.png; sourceTree = "<group>"; };
 		B221F24F1A46E738004E91FE /* icon_speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_speaker.png; path = Resource/Images/icon_speaker.png; sourceTree = "<group>"; };
+		B2929F881A481A1A0058984B /* icon_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_more.png; path = Resource/Images/icon_more.png; sourceTree = "<group>"; };
+		B2929F891A481A1A0058984B /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_share.png; path = Resource/Images/icon_share.png; sourceTree = "<group>"; };
+		B2929F8A1A481A1A0058984B /* icon_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_timer.png; path = Resource/Images/icon_timer.png; sourceTree = "<group>"; };
 		B2C94D2D1A4484A200B9CA95 /* Hungary Radio Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungary Radio Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C94D311A4484A200B9CA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C94D321A4484A200B9CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -227,6 +233,9 @@
 		B2C94D5E1A44938300B9CA95 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2929F881A481A1A0058984B /* icon_more.png */,
+				B2929F891A481A1A0058984B /* icon_share.png */,
+				B2929F8A1A481A1A0058984B /* icon_timer.png */,
 				B221F24F1A46E738004E91FE /* icon_speaker.png */,
 				B221F24D1A46DC44004E91FE /* background_wave.png */,
 				B2C94DB11A45492100B9CA95 /* channel-list.png */,
@@ -371,6 +380,7 @@
 				B2C94D931A44939200B9CA95 /* VolLess.png in Resources */,
 				B2C94D411A4484A200B9CA95 /* LaunchScreen.xib in Resources */,
 				B2C94D951A44939200B9CA95 /* VolLess@3x.png in Resources */,
+				B2929F8C1A481A1A0058984B /* icon_share.png in Resources */,
 				B2C94D901A44939200B9CA95 /* Previous@3x.png in Resources */,
 				B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */,
 				B2C94D971A44939200B9CA95 /* VolMore@2x.png in Resources */,
@@ -385,6 +395,7 @@
 				B2C94D921A44939200B9CA95 /* ToolBackground@2x.png in Resources */,
 				B2C94D911A44939200B9CA95 /* ToolBackground.png in Resources */,
 				B221F24E1A46DC44004E91FE /* background_wave.png in Resources */,
+				B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */,
 				B221F2501A46E738004E91FE /* icon_speaker.png in Resources */,
 				B2C94D8F1A44939200B9CA95 /* Previous@2x.png in Resources */,
 				B2C94D961A44939200B9CA95 /* VolMore.png in Resources */,
@@ -393,6 +404,7 @@
 				B2C94DAE1A45332600B9CA95 /* NavbarBackground@2x.png in Resources */,
 				B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */,
 				B2C94D7D1A44939200B9CA95 /* CheckSelected.png in Resources */,
+				B2929F8B1A481A1A0058984B /* icon_more.png in Resources */,
 				B2C94D7F1A44939200B9CA95 /* CheckSelected@3x.png in Resources */,
 				B2C94DAA1A4494C000B9CA95 /* iPhone_ChannelsViewController.xib in Resources */,
 				B2C94DA01A44941900B9CA95 /* iPad_MainViewController.xib in Resources */,
