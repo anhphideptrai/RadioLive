@@ -12,6 +12,7 @@
                 <outlet property="btPlayOrPause" destination="j3f-b4-d8E" id="QsM-d7-bRc"/>
                 <outlet property="btPrevious" destination="eqd-gz-GlY" id="6U8-hi-wU8"/>
                 <outlet property="lbChannelInfo" destination="Nmo-VN-HqA" id="UsQ-Pw-mNg"/>
+                <outlet property="menuButton" destination="azx-ZS-zCz" id="JV9-tf-Ytd"/>
                 <outlet property="sldVolume" destination="JaR-Tf-Xbo" id="xns-Fh-GT7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="QgQ-hh-r21"/>
                 <outlet property="waveFormView" destination="iVg-IX-ywC" id="TD4-BN-eyE"/>
@@ -186,6 +187,20 @@
                         <constraint firstAttribute="bottom" secondItem="iVg-IX-ywC" secondAttribute="bottom" id="y5f-8S-Hlk"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azx-ZS-zCz" customClass="ASOTwoStateButton">
+                    <rect key="frame" x="558" y="26" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="HNK-Sm-1C8"/>
+                        <constraint firstAttribute="height" constant="32" id="cTs-jx-24i"/>
+                    </constraints>
+                    <state key="normal" image="icon_more.png">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonAction:" destination="-1" eventType="touchUpInside" id="tJM-Va-Thk"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -194,11 +209,13 @@
                 <constraint firstItem="KRw-Ew-mSP" firstAttribute="top" secondItem="kLm-j2-dtw" secondAttribute="bottom" id="DBN-cO-KO5"/>
                 <constraint firstItem="kLm-j2-dtw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EXD-zV-k3j"/>
                 <constraint firstAttribute="trailing" secondItem="x1A-ce-uFI" secondAttribute="trailing" id="FYI-vG-BYK"/>
+                <constraint firstItem="azx-ZS-zCz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="Ieb-7d-ihN"/>
                 <constraint firstItem="KRw-Ew-mSP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Juc-BA-Srz"/>
                 <constraint firstItem="6m2-Oc-gGx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MRs-Kz-TfE"/>
                 <constraint firstAttribute="trailing" secondItem="6m2-Oc-gGx" secondAttribute="trailing" id="SSd-d1-2Fa"/>
                 <constraint firstAttribute="trailing" secondItem="bCJ-Rr-SmH" secondAttribute="trailing" id="X2H-nU-VZX"/>
                 <constraint firstItem="x1A-ce-uFI" firstAttribute="top" secondItem="bCJ-Rr-SmH" secondAttribute="bottom" id="Yv1-as-N1S"/>
+                <constraint firstAttribute="trailing" secondItem="azx-ZS-zCz" secondAttribute="trailing" constant="10" id="eeB-2G-e3x"/>
                 <constraint firstAttribute="trailing" secondItem="kLm-j2-dtw" secondAttribute="trailing" id="fY9-pG-E2I"/>
                 <constraint firstAttribute="trailing" secondItem="KRw-Ew-mSP" secondAttribute="trailing" id="lR6-fk-pL6"/>
                 <constraint firstItem="x1A-ce-uFI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oI3-9N-3fl"/>
@@ -220,6 +237,7 @@
         <image name="VolMore.png" width="27" height="34"/>
         <image name="background_wave.png" width="1536" height="1194"/>
         <image name="channel-list.png" width="28" height="19"/>
+        <image name="icon_more.png" width="57" height="57"/>
         <image name="icon_speaker.png" width="697" height="694"/>
         <image name="linen_pattern.png" width="435" height="435"/>
     </resources>

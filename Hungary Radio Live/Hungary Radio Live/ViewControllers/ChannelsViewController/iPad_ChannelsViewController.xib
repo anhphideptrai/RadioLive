@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChannelsViewController">
             <connections>
+                <outlet property="contentTableView" destination="VJa-D9-gGw" id="HqI-Kn-59Z"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Ens-4r-2Lk"/>
             </connections>
         </placeholder>
@@ -14,7 +15,60 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1z-hO-t03">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="64"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavbarBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="wqQ-l4-Mvj">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="64"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wqQ-l4-Mvj" firstAttribute="top" secondItem="b1z-hO-t03" secondAttribute="top" id="Hhg-wr-rXH"/>
+                        <constraint firstItem="wqQ-l4-Mvj" firstAttribute="leading" secondItem="b1z-hO-t03" secondAttribute="leading" id="W3j-sK-DDZ"/>
+                        <constraint firstAttribute="height" constant="64" id="bef-Fy-B6B"/>
+                        <constraint firstAttribute="bottom" secondItem="wqQ-l4-Mvj" secondAttribute="bottom" id="dQS-D7-eLf"/>
+                        <constraint firstAttribute="trailing" secondItem="wqQ-l4-Mvj" secondAttribute="trailing" id="mBg-HP-BIb"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linen_pattern.png" translatesAutoresizingMaskIntoConstraints="NO" id="LJh-zN-Utf">
+                    <rect key="frame" x="0.0" y="64" width="300" height="536"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VJa-D9-gGw">
+                    <rect key="frame" x="0.0" y="64" width="300" height="536"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DCj-69-hcS"/>
+                        <outlet property="delegate" destination="-1" id="Oai-ri-maB"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VJa-D9-gGw" firstAttribute="top" secondItem="b1z-hO-t03" secondAttribute="bottom" id="ClO-Yl-8ry"/>
+                <constraint firstItem="b1z-hO-t03" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="D1o-zb-wMD"/>
+                <constraint firstItem="b1z-hO-t03" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="D92-A0-Afj"/>
+                <constraint firstAttribute="trailing" secondItem="VJa-D9-gGw" secondAttribute="trailing" constant="300" id="EDr-7H-l9n"/>
+                <constraint firstAttribute="bottom" secondItem="VJa-D9-gGw" secondAttribute="bottom" id="J2S-in-REw"/>
+                <constraint firstItem="LJh-zN-Utf" firstAttribute="top" secondItem="b1z-hO-t03" secondAttribute="bottom" id="LcX-H5-AvP"/>
+                <constraint firstAttribute="trailing" secondItem="b1z-hO-t03" secondAttribute="trailing" constant="300" id="U1y-lU-PSG"/>
+                <constraint firstItem="LJh-zN-Utf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yit-9g-XG0"/>
+                <constraint firstAttribute="bottom" secondItem="LJh-zN-Utf" secondAttribute="bottom" id="aUl-ht-ka3"/>
+                <constraint firstAttribute="trailing" secondItem="LJh-zN-Utf" secondAttribute="trailing" constant="300" id="gB2-Of-5cd"/>
+                <constraint firstItem="VJa-D9-gGw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oUE-aG-W3o"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="NavbarBackground.png" width="320" height="64"/>
+        <image name="linen_pattern.png" width="435" height="435"/>
+    </resources>
 </document>

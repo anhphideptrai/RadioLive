@@ -27,6 +27,7 @@
     ChannelsViewController *leftMenu = [[ChannelsViewController alloc] initWithNibName:CHANNELS_XIB_FILE_NAME bundle:nil];
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     [SlideNavigationController sharedInstance].panGestureSideOffset = 100.f;
+    [SlideNavigationController sharedInstance].enableShadow = NO;
     MainViewController *mainVC = [[MainViewController alloc] initWithNibName:MAIN_XIB_FILE_NAME bundle:nil];
     [self.navController addChildViewController:mainVC];
     self.window.rootViewController = self.navController;

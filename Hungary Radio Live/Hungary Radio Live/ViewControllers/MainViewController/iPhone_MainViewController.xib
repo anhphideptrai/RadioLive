@@ -26,6 +26,37 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="linen_pattern.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ikq-VZ-v5k">
                     <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpk-ve-ZeG">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavbarBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZNa-gS-t7M">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-4u-vAx">
+                            <rect key="frame" x="10" y="22" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Ulg-gg-dBM"/>
+                                <constraint firstAttribute="height" constant="40" id="wiA-Oa-j3r"/>
+                            </constraints>
+                            <state key="normal" image="channel-list.png">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="actionClickBTChannel:" destination="-1" eventType="touchUpInside" id="eHm-JV-Vfw"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Sh1-4u-vAx" secondAttribute="bottom" constant="2" id="1zG-D7-aba"/>
+                        <constraint firstItem="ZNa-gS-t7M" firstAttribute="top" secondItem="Cpk-ve-ZeG" secondAttribute="top" id="GcG-cI-EjB"/>
+                        <constraint firstItem="Sh1-4u-vAx" firstAttribute="leading" secondItem="Cpk-ve-ZeG" secondAttribute="leading" constant="10" id="QZs-Bv-cDb"/>
+                        <constraint firstAttribute="height" constant="64" id="Swc-AO-wI9"/>
+                        <constraint firstAttribute="trailing" secondItem="ZNa-gS-t7M" secondAttribute="trailing" id="WfZ-jZ-j5z"/>
+                        <constraint firstItem="ZNa-gS-t7M" firstAttribute="leading" secondItem="Cpk-ve-ZeG" secondAttribute="leading" id="c7K-5p-Ha9"/>
+                        <constraint firstAttribute="bottom" secondItem="ZNa-gS-t7M" secondAttribute="bottom" id="yJO-EL-xsC"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ies-sN-c5w">
                     <rect key="frame" x="0.0" y="450" width="600" height="150"/>
                     <subviews>
@@ -169,52 +200,23 @@
                         </mask>
                     </variation>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpk-ve-ZeG">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavbarBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZNa-gS-t7M">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-4u-vAx">
-                            <rect key="frame" x="10" y="22" width="40" height="40"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="40" id="Ulg-gg-dBM"/>
-                                <constraint firstAttribute="height" constant="40" id="wiA-Oa-j3r"/>
-                            </constraints>
-                            <state key="normal" image="channel-list.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="actionClickBTChannel:" destination="-1" eventType="touchUpInside" id="eHm-JV-Vfw"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBD-WP-XfN" customClass="ASOTwoStateButton">
-                            <rect key="frame" x="558" y="26" width="32" height="32"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="32" id="QXA-mF-kaS"/>
-                                <constraint firstAttribute="height" constant="32" id="n85-CS-mZA"/>
-                            </constraints>
-                            <state key="normal" image="icon_more.png">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="menuButtonAction:" destination="-1" eventType="touchUpInside" id="0M5-Y7-dJk"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBD-WP-XfN" customClass="ASOTwoStateButton">
+                    <rect key="frame" x="558" y="26" width="32" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Sh1-4u-vAx" secondAttribute="bottom" constant="2" id="1zG-D7-aba"/>
-                        <constraint firstItem="ZNa-gS-t7M" firstAttribute="top" secondItem="Cpk-ve-ZeG" secondAttribute="top" id="GcG-cI-EjB"/>
-                        <constraint firstItem="Sh1-4u-vAx" firstAttribute="leading" secondItem="Cpk-ve-ZeG" secondAttribute="leading" constant="10" id="QZs-Bv-cDb"/>
-                        <constraint firstAttribute="height" constant="64" id="Swc-AO-wI9"/>
-                        <constraint firstAttribute="trailing" secondItem="ZNa-gS-t7M" secondAttribute="trailing" id="WfZ-jZ-j5z"/>
-                        <constraint firstItem="ZNa-gS-t7M" firstAttribute="leading" secondItem="Cpk-ve-ZeG" secondAttribute="leading" id="c7K-5p-Ha9"/>
-                        <constraint firstAttribute="trailing" secondItem="zBD-WP-XfN" secondAttribute="trailing" constant="10" id="jub-cp-3ix"/>
-                        <constraint firstItem="zBD-WP-XfN" firstAttribute="top" secondItem="Cpk-ve-ZeG" secondAttribute="top" constant="26" id="ul1-O6-2Qd"/>
-                        <constraint firstAttribute="bottom" secondItem="ZNa-gS-t7M" secondAttribute="bottom" id="yJO-EL-xsC"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="D2C-Ws-O6W"/>
+                        <constraint firstAttribute="width" constant="32" id="QXA-mF-kaS"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="32" id="YCO-sX-os3"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="32" id="f2f-Dh-8dg"/>
+                        <constraint firstAttribute="height" constant="32" id="n85-CS-mZA"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="rmU-hs-7SY"/>
                     </constraints>
-                </view>
+                    <state key="normal" image="icon_more.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonAction:" destination="-1" eventType="touchUpInside" id="0M5-Y7-dJk"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -229,6 +231,7 @@
                 <constraint firstItem="Ikq-VZ-v5k" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lbs-3z-jBj"/>
                 <constraint firstItem="7Uj-VC-NX3" firstAttribute="top" secondItem="Cpk-ve-ZeG" secondAttribute="bottom" id="P4N-pj-JWl"/>
                 <constraint firstItem="7Uj-VC-NX3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="UwB-h0-Xs8"/>
+                <constraint firstAttribute="trailing" secondItem="zBD-WP-XfN" secondAttribute="trailing" constant="10" id="WTn-BJ-UNR"/>
                 <constraint firstAttribute="trailing" secondItem="Ikq-VZ-v5k" secondAttribute="trailing" id="YmJ-Sn-hKC"/>
                 <constraint firstItem="ies-sN-c5w" firstAttribute="top" secondItem="7Uj-VC-NX3" secondAttribute="bottom" id="ZyE-G9-B4f"/>
                 <constraint firstItem="ies-sN-c5w" firstAttribute="top" secondItem="VMV-eT-Kdo" secondAttribute="bottom" id="bJg-JH-b0c"/>
@@ -240,6 +243,7 @@
                 <constraint firstAttribute="trailing" secondItem="7Uj-VC-NX3" secondAttribute="trailing" id="p84-ZD-9N9"/>
                 <constraint firstAttribute="bottom" secondItem="Ikq-VZ-v5k" secondAttribute="bottom" id="qgG-b8-3MJ"/>
                 <constraint firstItem="ies-sN-c5w" firstAttribute="top" secondItem="7Uj-VC-NX3" secondAttribute="bottom" id="te2-Hh-1sF"/>
+                <constraint firstItem="zBD-WP-XfN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="tp4-Zc-X9a"/>
                 <constraint firstItem="7Uj-VC-NX3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u1J-Tx-a6m"/>
             </constraints>
             <variation key="default">

@@ -13,10 +13,15 @@
 #define CHANNELS_XIB_FILE_NAME (IS_IPAD ? @"iPad_ChannelsViewController" : @"iPhone_ChannelsViewController")
 #define NAME_XIB_ANIMATION_MENU_VIEW_CONTROLLER (IS_IPAD?@"iPad_AnimationMenuCustom":@"iPhone_AnimationMenuCustom")
 
+#define _CONTACT_SECTION_TITLES_ @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", @"#"]
+#define _CONTACT_TITLE_CELL_FONT_ [UIFont fontWithName:@"Arial-BoldMT" size:17.0f]
+#define _CONTACT_SUBTITLE_CELL_FONT_ [UIFont fontWithName:@"ArialMT" size:12.0f]
+
 #define _red_color_         [UIColor colorWithRed:1.0 green:65.0/255 blue:54.0/255 alpha:1.0]
 #define _green_color_       [UIColor colorWithRed:46.0/255 green:204.0/255 blue:64.0/255 alpha:1.0]
 #define _blue_color_        [UIColor colorWithRed:0 green:116.0/255 blue:217.0/255 alpha:1.0]
 //#define _orange_color_      [UIColor colorWithRed:1.0 green:133.0/255 blue:27.0/255 alpha:1.0]
 #define _grayButton_color_  [UIColor darkGrayColor]
 #define _orange_color_      [UIColor colorWithRed:253.f/255.f green:145.f/255.f blue:29.f/255.f alpha:1.0]
+#define _MENU_DEFAULT_SLIDE_OFFSET_ (IS_IPAD ? 300 : 60)
 #endif

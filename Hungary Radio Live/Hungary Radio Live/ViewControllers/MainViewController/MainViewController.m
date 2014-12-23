@@ -37,7 +37,9 @@
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:YES animated:YES];
     [self.view setBackgroundColor:[UIColor grayColor]];
-    [self indexFromPixels:[SlideNavigationController sharedInstance].portraitSlideOffset];
+    
+    [[SlideNavigationController sharedInstance] setPortraitSlideOffset:_MENU_DEFAULT_SLIDE_OFFSET_];
+    
     [_waveFormView setWaveColor:_orange_color_];
     [_waveFormView setPrimaryWaveLineWidth:1.f];
     [_waveFormView setSecondaryWaveLineWidth:.5f];
@@ -160,35 +162,7 @@
 {
     return YES;
 }
-#pragma mark - Helpers -
 
-- (NSInteger)indexFromPixels:(NSInteger)pixels
-{
-    if (pixels == 60)
-        return 0;
-    else if (pixels == 120)
-        return 1;
-    else
-        return 2;
-}
-
-- (NSInteger)pixelsFromIndex:(NSInteger)index
-{
-    switch (index)
-    {
-        case 0:
-            return 60;
-            
-        case 1:
-            return 120;
-            
-        case 2:
-            return 200;
-            
-        default:
-            return 0;
-    }
-}
 - (IBAction)actionClickBTChannel:(id)sender {
     [[SlideNavigationController sharedInstance] openMenu:MenuLeft withCompletion:^{}];
 }
@@ -224,9 +198,7 @@
 }
 -(void) setupTimer
 {
-    timer = [NSTimer timerWithTimeInterval:0.001 target:self selector:@selector(tick) userInfo:nil repeats:YES];
-    
-    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(tick) userInfo:nil repeats:YES];
 }
 -(void) updateControls
 {

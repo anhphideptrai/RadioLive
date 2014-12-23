@@ -11,15 +11,23 @@
             <rect key="frame" x="0.0" y="0.0" width="768" height="260"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1N-cL-12Q">
-                    <rect key="frame" x="577" y="50" width="50" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1N-cL-12Q">
+                    <rect key="frame" x="728" y="100" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5cj-ZL-006"/>
+                        <constraint firstAttribute="width" constant="30" id="pxy-NB-Ul8"/>
+                    </constraints>
                     <state key="normal" image="icon_timer.png">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFM-M4-svN">
-                    <rect key="frame" x="607" y="108" width="50" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFM-M4-svN">
+                    <rect key="frame" x="728" y="166" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5ZB-6H-wbl"/>
+                        <constraint firstAttribute="width" constant="30" id="Byw-ev-sFc"/>
+                    </constraints>
                     <state key="normal" image="icon_share.png">
                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -28,6 +36,12 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OFM-M4-svN" firstAttribute="top" secondItem="b1N-cL-12Q" secondAttribute="bottom" constant="36" id="0qk-3d-nXp"/>
+                <constraint firstAttribute="trailing" secondItem="OFM-M4-svN" secondAttribute="trailing" constant="10" id="mkc-va-B1s"/>
+                <constraint firstAttribute="trailing" secondItem="b1N-cL-12Q" secondAttribute="trailing" constant="10" id="tVs-7f-5Ej"/>
+                <constraint firstItem="b1N-cL-12Q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="yey-2x-7cH"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
