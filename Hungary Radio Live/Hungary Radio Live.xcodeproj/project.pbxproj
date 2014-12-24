@@ -18,6 +18,8 @@
 		B2929FA51A491E870058984B /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2929FA41A491E870058984B /* Channel.m */; };
 		B2929FB21A49B21D0058984B /* darkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAE1A49B21D0058984B /* darkBackground.png */; };
 		B2929FB31A49B21D0058984B /* darkBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAF1A49B21D0058984B /* darkBackground@2x.png */; };
+		B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */; };
+		B2B8C39A1A4B16ED009D18EE /* Cell_Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */; };
 		B2C94D331A4484A200B9CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D321A4484A200B9CA95 /* main.m */; };
 		B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D351A4484A200B9CA95 /* AppDelegate.m */; };
 		B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D3D1A4484A200B9CA95 /* Images.xcassets */; };
@@ -25,7 +27,6 @@
 		B2C94D5B1A44875900B9CA95 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D5A1A44875900B9CA95 /* Utils.m */; };
 		B2C94D7D1A44939200B9CA95 /* CheckSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D5F1A44939200B9CA95 /* CheckSelected.png */; };
 		B2C94D7E1A44939200B9CA95 /* CheckSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D601A44939200B9CA95 /* CheckSelected@2x.png */; };
-		B2C94D7F1A44939200B9CA95 /* CheckSelected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D611A44939200B9CA95 /* CheckSelected@3x.png */; };
 		B2C94D801A44939200B9CA95 /* linen_pattern.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D621A44939200B9CA95 /* linen_pattern.png */; };
 		B2C94D811A44939200B9CA95 /* linen_pattern@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D631A44939200B9CA95 /* linen_pattern@2x.png */; };
 		B2C94D821A44939200B9CA95 /* linen_pattern@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94D641A44939200B9CA95 /* linen_pattern@3x.png */; };
@@ -84,6 +85,8 @@
 		B2929FA41A491E870058984B /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Common/Channel.m; sourceTree = "<group>"; };
 		B2929FAE1A49B21D0058984B /* darkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = darkBackground.png; path = Resource/Images/darkBackground.png; sourceTree = "<group>"; };
 		B2929FAF1A49B21D0058984B /* darkBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "darkBackground@2x.png"; path = "Resource/Images/darkBackground@2x.png"; sourceTree = "<group>"; };
+		B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cell_Selected.png; path = Resource/Images/Cell_Selected.png; sourceTree = "<group>"; };
+		B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cell_Selected@2x.png"; path = "Resource/Images/Cell_Selected@2x.png"; sourceTree = "<group>"; };
 		B2C94D2D1A4484A200B9CA95 /* Hungary Radio Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungary Radio Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C94D311A4484A200B9CA95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2C94D321A4484A200B9CA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,7 +100,6 @@
 		B2C94D5C1A4487CF00B9CA95 /* HungaryRadioLive-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HungaryRadioLive-Prefix.pch"; sourceTree = "<group>"; };
 		B2C94D5F1A44939200B9CA95 /* CheckSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CheckSelected.png; path = Resource/Images/CheckSelected.png; sourceTree = "<group>"; };
 		B2C94D601A44939200B9CA95 /* CheckSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckSelected@2x.png"; path = "Resource/Images/CheckSelected@2x.png"; sourceTree = "<group>"; };
-		B2C94D611A44939200B9CA95 /* CheckSelected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "CheckSelected@3x.png"; path = "Resource/Images/CheckSelected@3x.png"; sourceTree = "<group>"; };
 		B2C94D621A44939200B9CA95 /* linen_pattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linen_pattern.png; path = Resource/Images/linen_pattern.png; sourceTree = "<group>"; };
 		B2C94D631A44939200B9CA95 /* linen_pattern@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linen_pattern@2x.png"; path = "Resource/Images/linen_pattern@2x.png"; sourceTree = "<group>"; };
 		B2C94D641A44939200B9CA95 /* linen_pattern@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linen_pattern@3x.png"; path = "Resource/Images/linen_pattern@3x.png"; sourceTree = "<group>"; };
@@ -270,6 +272,8 @@
 		B2C94D5E1A44938300B9CA95 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */,
+				B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */,
 				B2929FAE1A49B21D0058984B /* darkBackground.png */,
 				B2929FAF1A49B21D0058984B /* darkBackground@2x.png */,
 				B2929F881A481A1A0058984B /* icon_more.png */,
@@ -284,7 +288,6 @@
 				B2C94DAC1A45332600B9CA95 /* NavbarBackground@2x.png */,
 				B2C94D5F1A44939200B9CA95 /* CheckSelected.png */,
 				B2C94D601A44939200B9CA95 /* CheckSelected@2x.png */,
-				B2C94D611A44939200B9CA95 /* CheckSelected@3x.png */,
 				B2C94D621A44939200B9CA95 /* linen_pattern.png */,
 				B2C94D631A44939200B9CA95 /* linen_pattern@2x.png */,
 				B2C94D641A44939200B9CA95 /* linen_pattern@3x.png */,
@@ -421,6 +424,7 @@
 				B2C94D951A44939200B9CA95 /* VolLess@3x.png in Resources */,
 				B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */,
 				B2929F8C1A481A1A0058984B /* icon_share.png in Resources */,
+				B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */,
 				B2C94D901A44939200B9CA95 /* Previous@3x.png in Resources */,
 				B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */,
 				B2C94D971A44939200B9CA95 /* VolMore@2x.png in Resources */,
@@ -442,13 +446,13 @@
 				B2C94D961A44939200B9CA95 /* VolMore.png in Resources */,
 				B2C94D861A44939200B9CA95 /* Next@2x.png in Resources */,
 				B2929F951A481C8A0058984B /* iPad_AnimationMenuCustom.xib in Resources */,
+				B2B8C39A1A4B16ED009D18EE /* Cell_Selected@2x.png in Resources */,
 				B2C94D841A44939200B9CA95 /* linenBack@2x.png in Resources */,
 				B2C94DAE1A45332600B9CA95 /* NavbarBackground@2x.png in Resources */,
 				B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */,
 				B2C94D7D1A44939200B9CA95 /* CheckSelected.png in Resources */,
 				B2929FB21A49B21D0058984B /* darkBackground.png in Resources */,
 				B2929F8B1A481A1A0058984B /* icon_more.png in Resources */,
-				B2C94D7F1A44939200B9CA95 /* CheckSelected@3x.png in Resources */,
 				B2C94DAA1A4494C000B9CA95 /* iPhone_ChannelsViewController.xib in Resources */,
 				B2C94DA01A44941900B9CA95 /* iPad_MainViewController.xib in Resources */,
 				B2C94D831A44939200B9CA95 /* linenBack.png in Resources */,

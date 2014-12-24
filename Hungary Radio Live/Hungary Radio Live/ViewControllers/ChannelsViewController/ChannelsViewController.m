@@ -12,6 +12,7 @@
 @interface ChannelsViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *channelList;
     NSMutableDictionary *sections;
+    NSIndexPath *lastSelected;
 }
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 
@@ -209,7 +210,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     Channel *channel = [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     [cell.textLabel setFont:_CONTACT_TITLE_CELL_FONT_];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
@@ -220,14 +221,36 @@
     cell.detailTextLabel.text = channel.location;
     
     [cell setBackgroundColor:[UIColor clearColor]];
+    
+    
     UIImageView *backgroudCell = [[UIImageView alloc] init];
     [backgroudCell setAlpha:.5f];
     [backgroudCell setImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"darkBackground" ofType:@"png"]]];
     [cell setBackgroundView:backgroudCell];
     
+    UIImageView *backgroudSelectedCell = [[UIImageView alloc] init];
+    [backgroudSelectedCell setAlpha:.5f];
+    [backgroudSelectedCell setImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"Cell_Selected" ofType:@"png"]]];
+    [cell setSelectedBackgroundView:backgroudSelectedCell];
+    [cell setTintColor:_orange_color_];
+    [cell setAccessoryView:nil];
+    if (lastSelected && [indexPath compare:lastSelected] == NSOrderedSame) {
+        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"CheckSelected" ofType:@"png"]]]];
+    }
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if ([indexPath compare:lastSelected] != NSOrderedSame){
+        UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"CheckSelected" ofType:@"png"]]]];
+        if (lastSelected) {
+            UITableViewCell* lastCell = [tableView cellForRowAtIndexPath:lastSelected];
+            [lastCell setAccessoryView:nil];
+        }
+        lastSelected = indexPath;
+    }
+}
 
 @end
