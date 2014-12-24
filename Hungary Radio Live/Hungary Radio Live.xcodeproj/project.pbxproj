@@ -66,6 +66,9 @@
 		B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94DB21A45492100B9CA95 /* channel-list@2x.png */; };
 		B2C94DB61A45492100B9CA95 /* channel-list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2C94DB31A45492100B9CA95 /* channel-list@3x.png */; };
 		B2C94DBB1A45CAD700B9CA95 /* SampleQueueId.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94DBA1A45CAD700B9CA95 /* SampleQueueId.m */; };
+		B2F9382D1A4B579900C5BEB6 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9382C1A4B579900C5BEB6 /* libsqlite3.0.dylib */; };
+		B2F938301A4B57D700C5BEB6 /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F9382F1A4B57D700C5BEB6 /* SQLiteManager.m */; };
+		B2F938331A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B2F938321A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite */; };
 		BF6C6B02266DBB9594FE65F8 /* libPods-Hungary Radio Live.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 860DE5E5C5541AE954AD6101 /* libPods-Hungary Radio Live.a */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +145,10 @@
 		B2C94DB31A45492100B9CA95 /* channel-list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "channel-list@3x.png"; path = "Resource/Images/channel-list@3x.png"; sourceTree = "<group>"; };
 		B2C94DB91A45CAD700B9CA95 /* SampleQueueId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SampleQueueId.h; path = Common/SampleQueueId.h; sourceTree = "<group>"; };
 		B2C94DBA1A45CAD700B9CA95 /* SampleQueueId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SampleQueueId.m; path = Common/SampleQueueId.m; sourceTree = "<group>"; };
+		B2F9382C1A4B579900C5BEB6 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		B2F9382E1A4B57D700C5BEB6 /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SQLiteManager.h; path = Common/SQLiteManager.h; sourceTree = "<group>"; };
+		B2F9382F1A4B57D700C5BEB6 /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SQLiteManager.m; path = Common/SQLiteManager.m; sourceTree = "<group>"; };
+		B2F938321A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = HungaryRadioLive.sqlite; path = Resource/DB/HungaryRadioLive.sqlite; sourceTree = "<group>"; };
 		C169AA8E78D8B9430F7074EF /* Pods-Hungary Radio Live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hungary Radio Live.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hungary Radio Live/Pods-Hungary Radio Live.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F9382D1A4B579900C5BEB6 /* libsqlite3.0.dylib in Frameworks */,
 				BF6C6B02266DBB9594FE65F8 /* libPods-Hungary Radio Live.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +168,7 @@
 		890430AC979C393335A2815F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2F9382C1A4B579900C5BEB6 /* libsqlite3.0.dylib */,
 				860DE5E5C5541AE954AD6101 /* libPods-Hungary Radio Live.a */,
 			);
 			name = Frameworks;
@@ -250,6 +259,8 @@
 		B2C94D571A4486FE00B9CA95 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B2F9382E1A4B57D700C5BEB6 /* SQLiteManager.h */,
+				B2F9382F1A4B57D700C5BEB6 /* SQLiteManager.m */,
 				B2C94DB91A45CAD700B9CA95 /* SampleQueueId.h */,
 				B2C94DBA1A45CAD700B9CA95 /* SampleQueueId.m */,
 				B2C94D581A44874300B9CA95 /* Constants.h */,
@@ -264,6 +275,7 @@
 		B2C94D5D1A44937600B9CA95 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B2F938311A4B589D00C5BEB6 /* DB */,
 				B2C94D5E1A44938300B9CA95 /* Images */,
 			);
 			name = Resource;
@@ -339,6 +351,14 @@
 				B2C94DA91A4494C000B9CA95 /* iPhone_ChannelsViewController.xib */,
 			);
 			name = ChannelsViewController;
+			sourceTree = "<group>";
+		};
+		B2F938311A4B589D00C5BEB6 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				B2F938321A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite */,
+			);
+			name = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +461,7 @@
 				B221F24E1A46DC44004E91FE /* background_wave.png in Resources */,
 				B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */,
 				B2929FB31A49B21D0058984B /* darkBackground@2x.png in Resources */,
+				B2F938331A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite in Resources */,
 				B221F2501A46E738004E91FE /* icon_speaker.png in Resources */,
 				B2C94D8F1A44939200B9CA95 /* Previous@2x.png in Resources */,
 				B2C94D961A44939200B9CA95 /* VolMore.png in Resources */,
@@ -507,6 +528,7 @@
 				B2929FA51A491E870058984B /* Channel.m in Sources */,
 				B2C94DA61A44948F00B9CA95 /* ChannelsViewController.m in Sources */,
 				B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */,
+				B2F938301A4B57D700C5BEB6 /* SQLiteManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

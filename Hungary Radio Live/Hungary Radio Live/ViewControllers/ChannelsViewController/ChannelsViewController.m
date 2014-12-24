@@ -7,8 +7,7 @@
 //
 
 #import "ChannelsViewController.h"
-#import "Channel.h"
-
+#import "SQLiteManager.h"
 @interface ChannelsViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *channelList;
     NSMutableDictionary *sections;
@@ -23,132 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor blackColor]];
-    channelList = [[NSMutableArray alloc] init];
+    channelList = [[SQLiteManager getInstance] getChannels];
     sections = [[NSMutableDictionary alloc] init];
-    Channel *channel = [[Channel alloc] init];
-    [channel setName:@"new york"];
-    [channel setLocation:@"no name"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"FM"];
-    [channel setLocation:@"Ho Chi Minh"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"AM"];
-    [channel setLocation:@"Sai Gon"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"VOA Special"];
-    [channel setLocation:@"USA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Spotlight English"];
-    [channel setLocation:@"CANADA"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"Hungary Radio"];
-    [channel setLocation:@"Hungary"];
-    [channelList addObject:channel];
-    
-    channel = [[Channel alloc] init];
-    [channel setName:@"LIVE Program"];
-    [channel setLocation:@"Live"];
-    [channelList addObject:channel];
     [self prepareDataForView];
     [self.contentTableView setBounces:YES];
     [self.contentTableView reloadData];
@@ -157,7 +32,7 @@
 - (void)prepareDataForView{
     BOOL found;
     for (Channel *channel in channelList) {
-        NSString *c = [[channel.name substringToIndex:1] uppercaseString];
+        NSString *c = [[channel.stationName substringToIndex:1] uppercaseString];
         found = NO;
         for (NSString *str in [sections allKeys])
         {
@@ -174,7 +49,7 @@
     // Loop again and sort the books into their respective keys
     for (Channel *channel in channelList)
     {
-        [[sections objectForKey:[[channel.name uppercaseString] substringToIndex:1]] addObject:channel];
+        [[sections objectForKey:[[channel.stationName uppercaseString] substringToIndex:1]] addObject:channel];
     }
 }
 #pragma mark - Table view data source
@@ -214,11 +89,11 @@
     Channel *channel = [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     [cell.textLabel setFont:_CONTACT_TITLE_CELL_FONT_];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
-    [cell.textLabel setText:channel.name];
+    [cell.textLabel setText:channel.stationName];
     
     [cell.detailTextLabel setFont:_CONTACT_SUBTITLE_CELL_FONT_];
     [cell.detailTextLabel setTextColor:_orange_color_];
-    cell.detailTextLabel.text = channel.location;
+    cell.detailTextLabel.text = channel.stationLocation;
     
     [cell setBackgroundColor:[UIColor clearColor]];
     
@@ -250,6 +125,9 @@
             [lastCell setAccessoryView:nil];
         }
         lastSelected = indexPath;
+        if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedChannel:)]) {
+            [self.delegate didSelectedChannel:[[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row]];
+        }
     }
 }
 

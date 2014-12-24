@@ -1,9 +1,9 @@
 //
 //  Channel.m
-//  Hungary Radio Live
+//  HTMLParsing
 //
-//  Created by Phi Nguyen on 12/23/14.
-//  Copyright (c) 2014 Thien Nguyen. All rights reserved.
+//  Created by Phi Nguyen on 12/25/14.
+//  Copyright (c) 2014 Swipe Stack Ltd. All rights reserved.
 //
 
 #import "Channel.h"

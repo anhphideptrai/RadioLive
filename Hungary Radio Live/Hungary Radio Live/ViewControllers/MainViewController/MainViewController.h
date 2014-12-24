@@ -12,7 +12,8 @@
 #import "ASOBounceButtonView.h"
 #import "ASOBounceButtonViewDelegate.h"
 #import "AnimationMenuCustom.h"
-@interface MainViewController : UIViewController <SlideNavigationControllerDelegate, ASOBounceButtonViewDelegate>
+#import "ChannelsViewController.h"
+@interface MainViewController : UIViewController <SlideNavigationControllerDelegate, ASOBounceButtonViewDelegate,ChannelsViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet ASOTwoStateButton *menuButton;
 @property (strong, nonatomic) AnimationMenuCustom *menuItemView;
 @end

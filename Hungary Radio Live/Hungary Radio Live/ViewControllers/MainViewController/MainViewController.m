@@ -53,9 +53,6 @@
     [_sldVolume setValue:.5f];
     _audioPlayer.delegate = self;
     
-    NSURL* url = [NSURL URLWithString:@"http://vprbbc.streamguys.net/vprbbc24-nopreroll"];
-    STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
-    [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
     [self setupTimer];
     [self updateControls];
     
@@ -220,13 +217,14 @@
 {
     if (!_audioPlayer)
     {
+        [_waveFormView updateWithLevel:0];
         return;
     }
     
     if (_audioPlayer.currentlyPlayingQueueItemId == nil)
     {
 
-        
+        [_waveFormView updateWithLevel:0];
         return;
     }
     CGFloat level = _audioPlayer.state == STKAudioPlayerStatePlaying ? pow(10, ([_audioPlayer averagePowerInDecibelsForChannel:1])/60 ): 0;
@@ -261,5 +259,14 @@
 
 -(void) audioPlayer:(STKAudioPlayer *)audioPlayer logInfo:(NSString *)line
 {
+}
+#pragma mark - ChannelsViewControllerDelegate Methods -
+- (void) didSelectedChannel:(Channel*)channel{
+    [[SlideNavigationController sharedInstance] closeMenuWithCompletion:^{
+        NSURL* url = [NSURL URLWithString:channel.streamFileContent];
+        STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
+        [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
+        _lbChannelInfo.text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
+    }];
 }
 @end

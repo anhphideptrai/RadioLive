@@ -13,7 +13,6 @@
 #define CHANNELS_XIB_FILE_NAME (IS_IPAD ? @"iPad_ChannelsViewController" : @"iPhone_ChannelsViewController")
 #define NAME_XIB_ANIMATION_MENU_VIEW_CONTROLLER (IS_IPAD?@"iPad_AnimationMenuCustom":@"iPhone_AnimationMenuCustom")
 
-#define _CONTACT_SECTION_TITLES_ @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z", @"#"]
 #define _CONTACT_TITLE_CELL_FONT_ [UIFont fontWithName:@"Arial-BoldMT" size:17.0f]
 #define _CONTACT_SUBTITLE_CELL_FONT_ [UIFont fontWithName:@"ArialMT" size:12.0f]
 
