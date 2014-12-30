@@ -31,6 +31,7 @@
     [leftMenu setDelegate:mainVC];
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     [SlideNavigationController sharedInstance].panGestureSideOffset = 100.f;
+    [SlideNavigationController sharedInstance].view.layer.shadowColor = [UIColor blackColor].CGColor;
     [self.navController addChildViewController:mainVC];
     self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
