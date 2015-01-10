@@ -36,7 +36,7 @@
 #include <AudioToolbox/AudioToolbox.h>
 
 @class STKDataSource;
-
+static AudioFileTypeID audioFileTypeHintDefault;
 @protocol STKDataSourceDelegate<NSObject>
 -(void) dataSourceDataAvailable:(STKDataSource*)dataSource;
 -(void) dataSourceErrorOccured:(STKDataSource*)dataSource;
@@ -58,5 +58,6 @@
 -(void) seekToOffset:(SInt64)offset;
 -(int) readIntoBuffer:(UInt8*)buffer withSize:(int)size;
 -(AudioFileTypeID) audioFileTypeHint;
-
++ (void)setAudioFileTypeHintDefault:(AudioFileTypeID)audioType;
++ (AudioFileTypeID)audioFileTypeHintDefault;
 @end

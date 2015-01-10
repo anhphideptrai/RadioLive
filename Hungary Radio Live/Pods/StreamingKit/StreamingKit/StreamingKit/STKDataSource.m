@@ -78,7 +78,12 @@
 {
     return 0;
 }
-
++ (void)setAudioFileTypeHintDefault:(AudioFileTypeID)audioType{
+    audioFileTypeHintDefault = audioType;
+}
++ (AudioFileTypeID)audioFileTypeHintDefault{
+    return audioFileTypeHintDefault;
+}
 -(BOOL) supportsSeek
 {
     return YES;
