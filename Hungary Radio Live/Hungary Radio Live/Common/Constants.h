@@ -16,7 +16,7 @@
 #define _CONTACT_TITLE_CELL_FONT_ [UIFont fontWithName:@"Arial-BoldMT" size:17.0f]
 #define _CONTACT_SUBTITLE_CELL_FONT_ [UIFont fontWithName:@"ArialMT" size:12.0f]
 
-#define _red_color_         [UIColor colorWithRed:1.0 green:65.0/255 blue:54.0/255 alpha:1.0]
+#define _red_color_         [UIColor colorWithRed:1.0 green:65.0/255 blue:54.0/255 alpha:.6]
 #define _green_color_       [UIColor colorWithRed:46.0/255 green:204.0/255 blue:64.0/255 alpha:1.0]
 #define _blue_color_        [UIColor colorWithRed:0 green:116.0/255 blue:217.0/255 alpha:1.0]
 //#define _orange_color_      [UIColor colorWithRed:1.0 green:133.0/255 blue:27.0/255 alpha:1.0]

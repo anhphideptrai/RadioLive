@@ -8,10 +8,13 @@
 
 #import "ChannelsViewController.h"
 #import "SQLiteManager.h"
+#import <SVSegmentedControl.h>
+
 @interface ChannelsViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *channelList;
     NSMutableDictionary *sections;
     NSIndexPath *lastSelected;
+    SVSegmentedControl *redSC;
 }
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 
@@ -28,7 +31,20 @@
     [self.contentTableView setBounces:YES];
     [self.contentTableView reloadData];
     
+    redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:@"All", @"Favorite", nil]];
+    [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    redSC.crossFadeLabelsOnDrag = YES;
+    redSC.height = 32.f;
+    redSC.thumb.tintColor = _red_color_;
+    [redSC setSelectedSegmentIndex:0 animated:NO];
+    [self.view addSubview:redSC];
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    redSC.center = CGPointMake(self.contentTableView.frame.size.width/2, (64 - 20)/2 + 20);
+}
+
 - (void)prepareDataForView{
     BOOL found;
     for (Channel *channel in channelList) {
@@ -52,6 +68,12 @@
         [[sections objectForKey:[[channel.stationName uppercaseString] substringToIndex:1]] addObject:channel];
     }
 }
+
+#pragma mark - UIControlEventValueChanged
+- (void)segmentedControlChangedValue:(SVSegmentedControl*)segmentedControl {
+
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {return [[sections allKeys] count];;

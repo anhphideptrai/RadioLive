@@ -8,6 +8,7 @@ PODS:
   - MarqueeLabel (2.1.0)
   - SCSiriWaveformView (1.0.1)
   - StreamingKit (0.1.25)
+  - SVSegmentedControl@PTEz (0.2.0.1)
 
 DEPENDENCIES:
   - ASOAnimatedButton (= 1.0.1)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - MarqueeLabel (= 2.1.0)
   - SCSiriWaveformView (= 1.0.1)
   - StreamingKit (= 0.1.25)
+  - SVSegmentedControl@PTEz (= 0.2.0.1)
 
 SPEC CHECKSUMS:
   ASOAnimatedButton: 92bb13622b2a7f0f0b106525e21c7b2d21d6ab94
@@ -22,5 +24,6 @@ SPEC CHECKSUMS:
   MarqueeLabel: ec6165fbef95fd11f411637550196b0cc7cbab03
   SCSiriWaveformView: e0d1a769e396a7c1a0bb05e02b539af2c484c56d
   StreamingKit: 5b36623e7246cccddb8db3aee79c43bb180a51be
+  SVSegmentedControl@PTEz: 83d7dfa736e1a775b4b80e2a3f74167120351e40
 
 COCOAPODS: 0.35.0

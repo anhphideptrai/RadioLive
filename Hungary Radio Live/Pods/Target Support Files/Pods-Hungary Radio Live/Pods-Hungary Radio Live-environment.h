@@ -36,6 +36,13 @@
 #define COCOAPODS_VERSION_MINOR_SCSiriWaveformView 0
 #define COCOAPODS_VERSION_PATCH_SCSiriWaveformView 1
 
+// SVSegmentedControl@PTEz
+#define COCOAPODS_POD_AVAILABLE_SVSegmentedControl_PTEz
+// This library does not follow semantic-versioning,
+// so we were not able to define version macros.
+// Please contact the author.
+// Version: 0.2.0.1.
+
 // StreamingKit
 #define COCOAPODS_POD_AVAILABLE_StreamingKit
 #define COCOAPODS_VERSION_MAJOR_StreamingKit 0
