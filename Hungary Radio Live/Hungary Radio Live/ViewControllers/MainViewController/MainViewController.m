@@ -83,19 +83,18 @@
     
     // Set as delegate of 'menu item view'
     [self.menuItemView setDelegate:self];
-    UIImageView *imgV = [[UIImageView alloc]init];
-    [imgV setBackgroundColor:[UIColor yellowColor]];
-    volumeView = [[MPVolumeView alloc] initWithFrame:CGRectZero];
-    [volumeView setMinimumVolumeSliderImage:[UIImage imageNamed:@"Cell_Selected.png"] forState:UIControlStateNormal];
-    [volumeView sizeToFit];
-    [self.volumeFrame addSubview:volumeView];
+    
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
     [self.menuItemView setAnimationStartFromHere:self.menuButton.frame];
-    [volumeView setFrame:self.volumeFrame.bounds];
+    if (!volumeView) {
+        volumeView = [[MPVolumeView alloc] initWithFrame:self.volumeFrame.bounds];
+        [volumeView setMinimumVolumeSliderImage:[UIImage imageNamed:@"Cell_Selected.png"] forState:UIControlStateNormal];
+        [self.volumeFrame addSubview:volumeView];
+    }
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
