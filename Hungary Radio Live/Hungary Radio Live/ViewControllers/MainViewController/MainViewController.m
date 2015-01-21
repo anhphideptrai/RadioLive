@@ -11,11 +11,14 @@
 #import "SampleQueueId.h"
 #import <SCSiriWaveformView.h>
 #import <MarqueeLabel.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 @interface MainViewController ()<STKAudioPlayerDelegate>{
     NSTimer* timer;
+    MPVolumeView *volumeView;
 }
 @property (strong, nonatomic) IBOutlet UIButton *btChannel;
-@property (strong, nonatomic) IBOutlet UISlider *sldVolume;
+@property (strong, nonatomic) IBOutlet UIView *volumeFrame;
 @property (strong, nonatomic) IBOutlet UIButton *btPlayOrPause;
 @property (strong, nonatomic) IBOutlet UIButton *btPrevious;
 @property (strong, nonatomic) IBOutlet UIButton *btNext;
@@ -25,7 +28,6 @@
 @property (nonatomic) ASOAnimationStyle progressiveORConcurrentStyle;
 
 - (IBAction)actionClickBTChannel:(id)sender;
-- (IBAction)actionChangedVolume:(id)sender;
 - (IBAction)actionClickBTPlayOrPause:(id)sender;
 - (IBAction)actionBTPrevious:(id)sender;
 - (IBAction)actionBTNext:(id)sender;
@@ -49,8 +51,7 @@
     
     _audioPlayer = [[STKAudioPlayer alloc] initWithOptions:(STKAudioPlayerOptions){ .flushQueueOnSeek = YES, .enableVolumeMixer = YES, .equalizerBandFrequencies = {50, 100, 200, 400, 800, 1600, 2600, 16000} }];
     _audioPlayer.meteringEnabled = YES;
-    _audioPlayer.volume = .5f;
-    [_sldVolume setValue:.5f];
+    _audioPlayer.volume = 1.f;
     _audioPlayer.delegate = self;
     
     [self setupTimer];
@@ -82,12 +83,19 @@
     
     // Set as delegate of 'menu item view'
     [self.menuItemView setDelegate:self];
+    UIImageView *imgV = [[UIImageView alloc]init];
+    [imgV setBackgroundColor:[UIColor yellowColor]];
+    volumeView = [[MPVolumeView alloc] initWithFrame:CGRectZero];
+    [volumeView setMinimumVolumeSliderImage:[UIImage imageNamed:@"Cell_Selected.png"] forState:UIControlStateNormal];
+    [volumeView sizeToFit];
+    [self.volumeFrame addSubview:volumeView];
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     [self becomeFirstResponder];
     [self.menuItemView setAnimationStartFromHere:self.menuButton.frame];
+    [volumeView setFrame:self.volumeFrame.bounds];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
@@ -162,12 +170,6 @@
 
 - (IBAction)actionClickBTChannel:(id)sender {
     [[SlideNavigationController sharedInstance] openMenu:MenuLeft withCompletion:^{}];
-}
-
-- (IBAction)actionChangedVolume:(id)sender {
-    if (_audioPlayer) {
-        _audioPlayer.volume = _sldVolume.value;
-    }
 }
 
 - (IBAction)actionClickBTPlayOrPause:(id)sender {

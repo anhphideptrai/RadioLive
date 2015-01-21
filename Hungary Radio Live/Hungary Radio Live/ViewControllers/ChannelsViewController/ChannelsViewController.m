@@ -80,7 +80,7 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 20)];
-    UIImageView *headerImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"ToolBackground" ofType:@"png"]]]; //set your image/
+    UIImageView *headerImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ToolBackground.png"]]; //set your image/
     
     UILabel *headerLbl = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, 205, 15)];//set as you need
     [headerLbl setTextColor:[UIColor lightGrayColor]];
@@ -122,17 +122,17 @@
     
     UIImageView *backgroudCell = [[UIImageView alloc] init];
     [backgroudCell setAlpha:.5f];
-    [backgroudCell setImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"darkBackground" ofType:@"png"]]];
+    [backgroudCell setImage:[UIImage imageNamed:@"darkBackground.png"]];
     [cell setBackgroundView:backgroudCell];
     
     UIImageView *backgroudSelectedCell = [[UIImageView alloc] init];
     [backgroudSelectedCell setAlpha:.5f];
-    [backgroudSelectedCell setImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"Cell_Selected" ofType:@"png"]]];
+    [backgroudSelectedCell setImage:[UIImage imageNamed:@"Cell_Selected.png"]];
     [cell setSelectedBackgroundView:backgroudSelectedCell];
     [cell setTintColor:_orange_color_];
     [cell setAccessoryView:nil];
     if (lastSelected && [indexPath compare:lastSelected] == NSOrderedSame) {
-        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"CheckSelected" ofType:@"png"]]]];
+        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CheckSelected.png"]]];
     }
     return cell;
 }
@@ -141,7 +141,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if ([indexPath compare:lastSelected] != NSOrderedSame){
         UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:[[NSBundle mainBundle] pathForResource:@"CheckSelected" ofType:@"png"]]]];
+        [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CheckSelected.png"]]];
         if (lastSelected) {
             UITableViewCell* lastCell = [tableView cellForRowAtIndexPath:lastSelected];
             [lastCell setAccessoryView:nil];

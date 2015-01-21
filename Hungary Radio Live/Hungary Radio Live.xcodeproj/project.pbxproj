@@ -629,6 +629,7 @@
 			baseConfigurationReference = 079CBC1A40A030B924A03942 /* Pods-Hungary Radio Live.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "Hungary Radio Live/HungaryRadioLive-Prefix.pch";
 				INFOPLIST_FILE = "Hungary Radio Live/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -643,6 +644,7 @@
 			baseConfigurationReference = C169AA8E78D8B9430F7074EF /* Pods-Hungary Radio Live.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "Hungary Radio Live/HungaryRadioLive-Prefix.pch";
 				INFOPLIST_FILE = "Hungary Radio Live/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
