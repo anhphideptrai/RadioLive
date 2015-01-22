@@ -23,4 +23,5 @@
 #define _grayButton_color_  [UIColor darkGrayColor]
 #define _orange_color_      [UIColor colorWithRed:253.f/255.f green:145.f/255.f blue:29.f/255.f alpha:1.0]
 #define _MENU_DEFAULT_SLIDE_OFFSET_ (IS_IPAD ? 300 : 60)
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00) >> 8))/255.0 blue:((float)((rgbValue) & 0xFF))/255.0 alpha:1.0]
 #endif

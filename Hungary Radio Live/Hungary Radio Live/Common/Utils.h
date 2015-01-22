@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface Utils : NSObject
-
++ (NSString*) getTimeFrom:(NSDate*) date withFormat:(NSString*) format;
++(NSString*)time;
 @end

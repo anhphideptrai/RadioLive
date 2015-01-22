@@ -196,7 +196,7 @@
 }
 -(void) setupTimer
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.005f target:self selector:@selector(tick) userInfo:nil repeats:YES];
 }
 -(void) updateControls
 {
