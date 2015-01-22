@@ -9,6 +9,7 @@ PODS:
   - SCSiriWaveformView (1.0.1)
   - StreamingKit (0.1.25)
   - SVSegmentedControl@PTEz (0.2.0.1)
+  - ZGCountDownTimer (2.0.1)
 
 DEPENDENCIES:
   - ASOAnimatedButton (= 1.0.1)
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - SCSiriWaveformView (= 1.0.1)
   - StreamingKit (= 0.1.25)
   - SVSegmentedControl@PTEz (= 0.2.0.1)
+  - ZGCountDownTimer (= 2.0.1)
 
 SPEC CHECKSUMS:
   ASOAnimatedButton: 92bb13622b2a7f0f0b106525e21c7b2d21d6ab94
@@ -25,5 +27,6 @@ SPEC CHECKSUMS:
   SCSiriWaveformView: e0d1a769e396a7c1a0bb05e02b539af2c484c56d
   StreamingKit: 5b36623e7246cccddb8db3aee79c43bb180a51be
   SVSegmentedControl@PTEz: 83d7dfa736e1a775b4b80e2a3f74167120351e40
+  ZGCountDownTimer: fe867dd11f8ffb01b64e56c01143aa0510225cef
 
 COCOAPODS: 0.35.0

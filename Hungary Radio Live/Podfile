@@ -8,5 +8,6 @@ pod 'StreamingKit', '0.1.25'
 pod 'SCSiriWaveformView', '1.0.1'
 pod 'ASOAnimatedButton', '1.0.1'
 pod 'SVSegmentedControl@PTEz', '0.2.0.1'
+pod 'ZGCountDownTimer', '2.0.1'
 end
 

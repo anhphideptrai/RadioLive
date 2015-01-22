@@ -49,6 +49,12 @@
 #define COCOAPODS_VERSION_MINOR_StreamingKit 1
 #define COCOAPODS_VERSION_PATCH_StreamingKit 25
 
+// ZGCountDownTimer
+#define COCOAPODS_POD_AVAILABLE_ZGCountDownTimer
+#define COCOAPODS_VERSION_MAJOR_ZGCountDownTimer 2
+#define COCOAPODS_VERSION_MINOR_ZGCountDownTimer 0
+#define COCOAPODS_VERSION_PATCH_ZGCountDownTimer 1
+
 // iOS-Slide-Menu
 #define COCOAPODS_POD_AVAILABLE_iOS_Slide_Menu
 #define COCOAPODS_VERSION_MAJOR_iOS_Slide_Menu 1

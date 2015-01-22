@@ -59,7 +59,7 @@
     
     _lbChannelInfo.marqueeType = MLContinuous;
     _lbChannelInfo.scrollDuration = 10.0f;
-    _lbChannelInfo.fadeLength = 10.0f;
+    _lbChannelInfo.fadeLength = 100.0f;
     _lbChannelInfo.trailingBuffer = 30.0f;
     _lbChannelInfo.textColor = _orange_color_;
     _lbChannelInfo.text = @"Thien Nguyen - Hungary Radio Live                      Thien Nguyen - Hungary Radio Live                      ";
@@ -268,7 +268,8 @@
         STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
         [STKDataSource setAudioFileTypeHintDefault:[[channel.streamFormat lowercaseString] isEqualToString:@"aac"]?kAudioFileAAC_ADTSType:kAudioFileMP3Type];
         [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
-        _lbChannelInfo.text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
+        NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
+        _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
     }];
 }
 @end

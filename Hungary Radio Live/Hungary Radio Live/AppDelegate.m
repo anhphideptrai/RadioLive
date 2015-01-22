@@ -30,7 +30,7 @@
     ChannelsViewController *leftMenu = [[ChannelsViewController alloc] initWithNibName:CHANNELS_XIB_FILE_NAME bundle:nil];
     [leftMenu setDelegate:mainVC];
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
-    [SlideNavigationController sharedInstance].panGestureSideOffset = 100.f;
+    [SlideNavigationController sharedInstance].panGestureSideOffset = 50.f;
     [SlideNavigationController sharedInstance].view.layer.shadowColor = [UIColor blackColor].CGColor;
     [self.navController addChildViewController:mainVC];
     self.window.rootViewController = self.navController;
