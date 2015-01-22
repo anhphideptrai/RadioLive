@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		B221F24E1A46DC44004E91FE /* background_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24D1A46DC44004E91FE /* background_wave.png */; };
 		B221F2501A46E738004E91FE /* icon_speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24F1A46E738004E91FE /* icon_speaker.png */; };
+		B279E55A1A710F6D001E9C07 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5521A710F6D001E9C07 /* star.png */; };
+		B279E55B1A710F6D001E9C07 /* star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5531A710F6D001E9C07 /* star-selected.png */; };
+		B279E55C1A710F6D001E9C07 /* star-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5541A710F6D001E9C07 /* star-selected@2x.png */; };
+		B279E55D1A710F6D001E9C07 /* star-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5551A710F6D001E9C07 /* star-selected@3x.png */; };
+		B279E55E1A710F6D001E9C07 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5561A710F6D001E9C07 /* star@2x.png */; };
+		B279E55F1A710F6D001E9C07 /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5571A710F6D001E9C07 /* star@3x.png */; };
 		B2929F8B1A481A1A0058984B /* icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F881A481A1A0058984B /* icon_more.png */; };
 		B2929F8C1A481A1A0058984B /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F891A481A1A0058984B /* icon_share.png */; };
 		B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F8A1A481A1A0058984B /* icon_timer.png */; };
@@ -77,6 +83,12 @@
 		860DE5E5C5541AE954AD6101 /* libPods-Hungary Radio Live.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hungary Radio Live.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221F24D1A46DC44004E91FE /* background_wave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_wave.png; path = Resource/Images/background_wave.png; sourceTree = "<group>"; };
 		B221F24F1A46E738004E91FE /* icon_speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_speaker.png; path = Resource/Images/icon_speaker.png; sourceTree = "<group>"; };
+		B279E5521A710F6D001E9C07 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resource/Images/star.png; sourceTree = "<group>"; };
+		B279E5531A710F6D001E9C07 /* star-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected.png"; path = "Resource/Images/star-selected.png"; sourceTree = "<group>"; };
+		B279E5541A710F6D001E9C07 /* star-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected@2x.png"; path = "Resource/Images/star-selected@2x.png"; sourceTree = "<group>"; };
+		B279E5551A710F6D001E9C07 /* star-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected@3x.png"; path = "Resource/Images/star-selected@3x.png"; sourceTree = "<group>"; };
+		B279E5561A710F6D001E9C07 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@2x.png"; path = "Resource/Images/star@2x.png"; sourceTree = "<group>"; };
+		B279E5571A710F6D001E9C07 /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@3x.png"; path = "Resource/Images/star@3x.png"; sourceTree = "<group>"; };
 		B2929F881A481A1A0058984B /* icon_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_more.png; path = Resource/Images/icon_more.png; sourceTree = "<group>"; };
 		B2929F891A481A1A0058984B /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_share.png; path = Resource/Images/icon_share.png; sourceTree = "<group>"; };
 		B2929F8A1A481A1A0058984B /* icon_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_timer.png; path = Resource/Images/icon_timer.png; sourceTree = "<group>"; };
@@ -284,6 +296,12 @@
 		B2C94D5E1A44938300B9CA95 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B279E5521A710F6D001E9C07 /* star.png */,
+				B279E5531A710F6D001E9C07 /* star-selected.png */,
+				B279E5541A710F6D001E9C07 /* star-selected@2x.png */,
+				B279E5551A710F6D001E9C07 /* star-selected@3x.png */,
+				B279E5561A710F6D001E9C07 /* star@2x.png */,
+				B279E5571A710F6D001E9C07 /* star@3x.png */,
 				B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */,
 				B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */,
 				B2929FAE1A49B21D0058984B /* darkBackground.png */,
@@ -425,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B279E55C1A710F6D001E9C07 /* star-selected@2x.png in Resources */,
 				B2C94DA81A4494A800B9CA95 /* iPad_ChannelsViewController.xib in Resources */,
 				B2C94DAD1A45332600B9CA95 /* NavbarBackground.png in Resources */,
 				B2C94D8A1A44939200B9CA95 /* PauseControl@3x.png in Resources */,
@@ -456,11 +475,13 @@
 				B2C94D8E1A44939200B9CA95 /* Previous.png in Resources */,
 				B2C94D891A44939200B9CA95 /* PauseControl@2x.png in Resources */,
 				B2C94D881A44939200B9CA95 /* PauseControl.png in Resources */,
+				B279E55A1A710F6D001E9C07 /* star.png in Resources */,
 				B2C94D921A44939200B9CA95 /* ToolBackground@2x.png in Resources */,
 				B2C94D911A44939200B9CA95 /* ToolBackground.png in Resources */,
 				B221F24E1A46DC44004E91FE /* background_wave.png in Resources */,
 				B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */,
 				B2929FB31A49B21D0058984B /* darkBackground@2x.png in Resources */,
+				B279E55F1A710F6D001E9C07 /* star@3x.png in Resources */,
 				B2F938331A4B58CB00C5BEB6 /* HungaryRadioLive.sqlite in Resources */,
 				B221F2501A46E738004E91FE /* icon_speaker.png in Resources */,
 				B2C94D8F1A44939200B9CA95 /* Previous@2x.png in Resources */,
@@ -473,7 +494,10 @@
 				B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */,
 				B2C94D7D1A44939200B9CA95 /* CheckSelected.png in Resources */,
 				B2929FB21A49B21D0058984B /* darkBackground.png in Resources */,
+				B279E55D1A710F6D001E9C07 /* star-selected@3x.png in Resources */,
 				B2929F8B1A481A1A0058984B /* icon_more.png in Resources */,
+				B279E55B1A710F6D001E9C07 /* star-selected.png in Resources */,
+				B279E55E1A710F6D001E9C07 /* star@2x.png in Resources */,
 				B2C94DAA1A4494C000B9CA95 /* iPhone_ChannelsViewController.xib in Resources */,
 				B2C94DA01A44941900B9CA95 /* iPad_MainViewController.xib in Resources */,
 				B2C94D831A44939200B9CA95 /* linenBack.png in Resources */,
