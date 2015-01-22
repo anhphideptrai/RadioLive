@@ -59,7 +59,7 @@
     
     _lbChannelInfo.marqueeType = MLContinuous;
     _lbChannelInfo.scrollDuration = 10.0f;
-    _lbChannelInfo.fadeLength = 100.0f;
+    _lbChannelInfo.fadeLength = 50.0f;
     _lbChannelInfo.trailingBuffer = 30.0f;
     _lbChannelInfo.textColor = _orange_color_;
     _lbChannelInfo.text = @"Thien Nguyen - Hungary Radio Live                      Thien Nguyen - Hungary Radio Live                      ";
@@ -68,7 +68,7 @@
     [self.menuButton setOffStateImageName:@"bottomnav_settings_normal.png"];
     [self.menuButton initAnimationWithFadeEffectEnabled:YES];
     self.menuItemView = [[[NSBundle mainBundle] loadNibNamed:NAME_XIB_ANIMATION_MENU_VIEW_CONTROLLER owner:self options:nil] lastObject];
-    [self.menuItemView setBackgroundColor:[UIColor clearColor]];
+    [self.menuItemView setBackgroundColor:[UIColor colorWithRed:.0f green:.0f blue:.0f alpha:.5f]];
     NSArray *arrMenuItemButtons = [[NSArray alloc] initWithObjects:self.menuItemView.menuItem1,
                                    self.menuItemView.menuItem2,
                                    nil]; // Add all of the defined 'menu item button' to 'menu item view'
