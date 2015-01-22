@@ -15,6 +15,9 @@
 		B279E55D1A710F6D001E9C07 /* star-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5551A710F6D001E9C07 /* star-selected@3x.png */; };
 		B279E55E1A710F6D001E9C07 /* star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5561A710F6D001E9C07 /* star@2x.png */; };
 		B279E55F1A710F6D001E9C07 /* star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5571A710F6D001E9C07 /* star@3x.png */; };
+		B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = B279E5621A7153BB001E9C07 /* FBFontSymbol.m */; };
+		B279E5681A7153BB001E9C07 /* FBLCDFont.m in Sources */ = {isa = PBXBuildFile; fileRef = B279E5641A7153BB001E9C07 /* FBLCDFont.m */; };
+		B279E5691A7153BB001E9C07 /* FBLCDFontView.m in Sources */ = {isa = PBXBuildFile; fileRef = B279E5661A7153BB001E9C07 /* FBLCDFontView.m */; };
 		B2929F8B1A481A1A0058984B /* icon_more.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F881A481A1A0058984B /* icon_more.png */; };
 		B2929F8C1A481A1A0058984B /* icon_share.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F891A481A1A0058984B /* icon_share.png */; };
 		B2929F8D1A481A1A0058984B /* icon_timer.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929F8A1A481A1A0058984B /* icon_timer.png */; };
@@ -89,6 +92,12 @@
 		B279E5551A710F6D001E9C07 /* star-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected@3x.png"; path = "Resource/Images/star-selected@3x.png"; sourceTree = "<group>"; };
 		B279E5561A710F6D001E9C07 /* star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@2x.png"; path = "Resource/Images/star@2x.png"; sourceTree = "<group>"; };
 		B279E5571A710F6D001E9C07 /* star@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star@3x.png"; path = "Resource/Images/star@3x.png"; sourceTree = "<group>"; };
+		B279E5611A7153BB001E9C07 /* FBFontSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFontSymbol.h; path = Views/LCDView/FBFontSymbol.h; sourceTree = "<group>"; };
+		B279E5621A7153BB001E9C07 /* FBFontSymbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFontSymbol.m; path = Views/LCDView/FBFontSymbol.m; sourceTree = "<group>"; };
+		B279E5631A7153BB001E9C07 /* FBLCDFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLCDFont.h; path = Views/LCDView/FBLCDFont.h; sourceTree = "<group>"; };
+		B279E5641A7153BB001E9C07 /* FBLCDFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLCDFont.m; path = Views/LCDView/FBLCDFont.m; sourceTree = "<group>"; };
+		B279E5651A7153BB001E9C07 /* FBLCDFontView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLCDFontView.h; path = Views/LCDView/FBLCDFontView.h; sourceTree = "<group>"; };
+		B279E5661A7153BB001E9C07 /* FBLCDFontView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLCDFontView.m; path = Views/LCDView/FBLCDFontView.m; sourceTree = "<group>"; };
 		B2929F881A481A1A0058984B /* icon_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_more.png; path = Resource/Images/icon_more.png; sourceTree = "<group>"; };
 		B2929F891A481A1A0058984B /* icon_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_share.png; path = Resource/Images/icon_share.png; sourceTree = "<group>"; };
 		B2929F8A1A481A1A0058984B /* icon_timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_timer.png; path = Resource/Images/icon_timer.png; sourceTree = "<group>"; };
@@ -195,9 +204,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B279E5601A71537B001E9C07 /* LCDView */ = {
+			isa = PBXGroup;
+			children = (
+				B279E5611A7153BB001E9C07 /* FBFontSymbol.h */,
+				B279E5621A7153BB001E9C07 /* FBFontSymbol.m */,
+				B279E5631A7153BB001E9C07 /* FBLCDFont.h */,
+				B279E5641A7153BB001E9C07 /* FBLCDFont.m */,
+				B279E5651A7153BB001E9C07 /* FBLCDFontView.h */,
+				B279E5661A7153BB001E9C07 /* FBLCDFontView.m */,
+			);
+			name = LCDView;
+			sourceTree = "<group>";
+		};
 		B2929F8E1A481C520058984B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B279E5601A71537B001E9C07 /* LCDView */,
 				B2929F8F1A481C8A0058984B /* AnimationMenu */,
 			);
 			name = Views;
@@ -544,15 +567,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */,
 				B2C94D5B1A44875900B9CA95 /* Utils.m in Sources */,
 				B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */,
 				B2C94D331A4484A200B9CA95 /* main.m in Sources */,
 				B2C94D9E1A4493F900B9CA95 /* MainViewController.m in Sources */,
 				B2C94DBB1A45CAD700B9CA95 /* SampleQueueId.m in Sources */,
 				B2929FA51A491E870058984B /* Channel.m in Sources */,
+				B279E5681A7153BB001E9C07 /* FBLCDFont.m in Sources */,
 				B2C94DA61A44948F00B9CA95 /* ChannelsViewController.m in Sources */,
 				B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */,
 				B2F938301A4B57D700C5BEB6 /* SQLiteManager.m in Sources */,
+				B279E5691A7153BB001E9C07 /* FBLCDFontView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
