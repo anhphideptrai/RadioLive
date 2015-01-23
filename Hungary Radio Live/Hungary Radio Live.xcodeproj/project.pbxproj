@@ -30,7 +30,6 @@
 		B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */; };
 		B29CDFFC1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFB1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib */; };
 		B29CDFFE1A7210E200C09E3B /* iPad_SleepTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFD1A7210E200C09E3B /* iPad_SleepTimerViewController.xib */; };
-		B29CE0001A7216DA00C09E3B /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFF1A7216DA00C09E3B /* ic_close.png */; };
 		B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */; };
 		B2B8C39A1A4B16ED009D18EE /* Cell_Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */; };
 		B2C94D331A4484A200B9CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D321A4484A200B9CA95 /* main.m */; };
@@ -117,7 +116,6 @@
 		B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SleepTimerViewController.m; path = ViewControllers/SleepTimerViewController/SleepTimerViewController.m; sourceTree = "<group>"; };
 		B29CDFFB1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iPhone_SleepTimerViewController.xib; path = ViewControllers/SleepTimerViewController/iPhone_SleepTimerViewController.xib; sourceTree = "<group>"; };
 		B29CDFFD1A7210E200C09E3B /* iPad_SleepTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iPad_SleepTimerViewController.xib; path = ViewControllers/SleepTimerViewController/iPad_SleepTimerViewController.xib; sourceTree = "<group>"; };
-		B29CDFFF1A7216DA00C09E3B /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_close.png; path = Resource/Images/ic_close.png; sourceTree = "<group>"; };
 		B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cell_Selected.png; path = Resource/Images/Cell_Selected.png; sourceTree = "<group>"; };
 		B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cell_Selected@2x.png"; path = "Resource/Images/Cell_Selected@2x.png"; sourceTree = "<group>"; };
 		B2C94D2D1A4484A200B9CA95 /* Hungary Radio Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungary Radio Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -340,7 +338,6 @@
 		B2C94D5E1A44938300B9CA95 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				B29CDFFF1A7216DA00C09E3B /* ic_close.png */,
 				B279E5521A710F6D001E9C07 /* star.png */,
 				B279E5531A710F6D001E9C07 /* star-selected.png */,
 				B279E5541A710F6D001E9C07 /* star-selected@2x.png */,
@@ -509,7 +506,6 @@
 				B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */,
 				B2929F8C1A481A1A0058984B /* icon_share.png in Resources */,
 				B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */,
-				B29CE0001A7216DA00C09E3B /* ic_close.png in Resources */,
 				B2C94D901A44939200B9CA95 /* Previous@3x.png in Resources */,
 				B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */,
 				B2C94D971A44939200B9CA95 /* VolMore@2x.png in Resources */,
