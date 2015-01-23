@@ -12,6 +12,7 @@
 #import <SCSiriWaveformView.h>
 #import <MarqueeLabel.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "SleepTimerViewController.h"
 
 @interface MainViewController ()<STKAudioPlayerDelegate>{
     NSTimer* timer;
@@ -154,6 +155,12 @@
 - (void)didSelectBounceButtonAtIndex:(NSUInteger)index
 {
     [self.menuButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    if (index == 0) {
+        SleepTimerViewController *sleepTimerVC = [[SleepTimerViewController alloc] initWithNibName:NAME_XIB_SLEEP_TIMER_VIEW_CONTROLLER bundle:nil];
+        [self presentViewController:sleepTimerVC animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (IBAction)sendActionForMenuButton:(id)sender{

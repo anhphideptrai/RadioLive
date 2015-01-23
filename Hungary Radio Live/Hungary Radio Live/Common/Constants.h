@@ -12,6 +12,7 @@
 #define MAIN_XIB_FILE_NAME (IS_IPAD ? @"iPad_MainViewController" : @"iPhone_MainViewController")
 #define CHANNELS_XIB_FILE_NAME (IS_IPAD ? @"iPad_ChannelsViewController" : @"iPhone_ChannelsViewController")
 #define NAME_XIB_ANIMATION_MENU_VIEW_CONTROLLER (IS_IPAD?@"iPad_AnimationMenuCustom":@"iPhone_AnimationMenuCustom")
+#define NAME_XIB_SLEEP_TIMER_VIEW_CONTROLLER (IS_IPAD?@"iPad_SleepTimerViewController":@"iPhone_SleepTimerViewController")
 
 #define _CONTACT_TITLE_CELL_FONT_ [UIFont fontWithName:@"Arial-BoldMT" size:17.0f]
 #define _CONTACT_SUBTITLE_CELL_FONT_ [UIFont fontWithName:@"ArialMT" size:12.0f]

@@ -27,6 +27,10 @@
 		B2929FA51A491E870058984B /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2929FA41A491E870058984B /* Channel.m */; };
 		B2929FB21A49B21D0058984B /* darkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAE1A49B21D0058984B /* darkBackground.png */; };
 		B2929FB31A49B21D0058984B /* darkBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAF1A49B21D0058984B /* darkBackground@2x.png */; };
+		B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */; };
+		B29CDFFC1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFB1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib */; };
+		B29CDFFE1A7210E200C09E3B /* iPad_SleepTimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFD1A7210E200C09E3B /* iPad_SleepTimerViewController.xib */; };
+		B29CE0001A7216DA00C09E3B /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = B29CDFFF1A7216DA00C09E3B /* ic_close.png */; };
 		B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */; };
 		B2B8C39A1A4B16ED009D18EE /* Cell_Selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */; };
 		B2C94D331A4484A200B9CA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C94D321A4484A200B9CA95 /* main.m */; };
@@ -109,6 +113,11 @@
 		B2929FA41A491E870058984B /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Common/Channel.m; sourceTree = "<group>"; };
 		B2929FAE1A49B21D0058984B /* darkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = darkBackground.png; path = Resource/Images/darkBackground.png; sourceTree = "<group>"; };
 		B2929FAF1A49B21D0058984B /* darkBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "darkBackground@2x.png"; path = "Resource/Images/darkBackground@2x.png"; sourceTree = "<group>"; };
+		B29CDFF81A7210A800C09E3B /* SleepTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SleepTimerViewController.h; path = ViewControllers/SleepTimerViewController/SleepTimerViewController.h; sourceTree = "<group>"; };
+		B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SleepTimerViewController.m; path = ViewControllers/SleepTimerViewController/SleepTimerViewController.m; sourceTree = "<group>"; };
+		B29CDFFB1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iPhone_SleepTimerViewController.xib; path = ViewControllers/SleepTimerViewController/iPhone_SleepTimerViewController.xib; sourceTree = "<group>"; };
+		B29CDFFD1A7210E200C09E3B /* iPad_SleepTimerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iPad_SleepTimerViewController.xib; path = ViewControllers/SleepTimerViewController/iPad_SleepTimerViewController.xib; sourceTree = "<group>"; };
+		B29CDFFF1A7216DA00C09E3B /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_close.png; path = Resource/Images/ic_close.png; sourceTree = "<group>"; };
 		B2B8C3971A4B16ED009D18EE /* Cell_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cell_Selected.png; path = Resource/Images/Cell_Selected.png; sourceTree = "<group>"; };
 		B2B8C3981A4B16ED009D18EE /* Cell_Selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cell_Selected@2x.png"; path = "Resource/Images/Cell_Selected@2x.png"; sourceTree = "<group>"; };
 		B2C94D2D1A4484A200B9CA95 /* Hungary Radio Live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hungary Radio Live.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +247,17 @@
 			path = Views/AnimationMenu;
 			sourceTree = "<group>";
 		};
+		B29CDFF71A72107800C09E3B /* SleepTimerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B29CDFF81A7210A800C09E3B /* SleepTimerViewController.h */,
+				B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */,
+				B29CDFFB1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib */,
+				B29CDFFD1A7210E200C09E3B /* iPad_SleepTimerViewController.xib */,
+			);
+			name = SleepTimerViewController;
+			sourceTree = "<group>";
+		};
 		B2C94D241A4484A200B9CA95 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +305,7 @@
 		B2C94D561A4486F400B9CA95 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B29CDFF71A72107800C09E3B /* SleepTimerViewController */,
 				B2C94DA31A44945C00B9CA95 /* ChannelsViewController */,
 				B2C94D9B1A4493BB00B9CA95 /* MainViewController */,
 			);
@@ -319,6 +340,7 @@
 		B2C94D5E1A44938300B9CA95 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B29CDFFF1A7216DA00C09E3B /* ic_close.png */,
 				B279E5521A710F6D001E9C07 /* star.png */,
 				B279E5531A710F6D001E9C07 /* star-selected.png */,
 				B279E5541A710F6D001E9C07 /* star-selected@2x.png */,
@@ -487,6 +509,7 @@
 				B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */,
 				B2929F8C1A481A1A0058984B /* icon_share.png in Resources */,
 				B2B8C3991A4B16ED009D18EE /* Cell_Selected.png in Resources */,
+				B29CE0001A7216DA00C09E3B /* ic_close.png in Resources */,
 				B2C94D901A44939200B9CA95 /* Previous@3x.png in Resources */,
 				B2C94D3E1A4484A200B9CA95 /* Images.xcassets in Resources */,
 				B2C94D971A44939200B9CA95 /* VolMore@2x.png in Resources */,
@@ -498,6 +521,7 @@
 				B2C94D8E1A44939200B9CA95 /* Previous.png in Resources */,
 				B2C94D891A44939200B9CA95 /* PauseControl@2x.png in Resources */,
 				B2C94D881A44939200B9CA95 /* PauseControl.png in Resources */,
+				B29CDFFE1A7210E200C09E3B /* iPad_SleepTimerViewController.xib in Resources */,
 				B279E55A1A710F6D001E9C07 /* star.png in Resources */,
 				B2C94D921A44939200B9CA95 /* ToolBackground@2x.png in Resources */,
 				B2C94D911A44939200B9CA95 /* ToolBackground.png in Resources */,
@@ -512,6 +536,7 @@
 				B2C94D861A44939200B9CA95 /* Next@2x.png in Resources */,
 				B2929F951A481C8A0058984B /* iPad_AnimationMenuCustom.xib in Resources */,
 				B2B8C39A1A4B16ED009D18EE /* Cell_Selected@2x.png in Resources */,
+				B29CDFFC1A7210C200C09E3B /* iPhone_SleepTimerViewController.xib in Resources */,
 				B2C94D841A44939200B9CA95 /* linenBack@2x.png in Resources */,
 				B2C94DAE1A45332600B9CA95 /* NavbarBackground@2x.png in Resources */,
 				B2C94DB51A45492100B9CA95 /* channel-list@2x.png in Resources */,
@@ -567,6 +592,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */,
 				B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */,
 				B2C94D5B1A44875900B9CA95 /* Utils.m in Sources */,
 				B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */,
