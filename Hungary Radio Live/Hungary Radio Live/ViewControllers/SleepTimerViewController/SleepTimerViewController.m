@@ -126,15 +126,14 @@
 - (void)setupLCDFont
 {
     self.lCDView.text = [self.delegate updateTextShowTimer:self];
-    self.lCDView.lineWidth = 8.0;
-    self.lCDView.drawOffLine = YES;
-    self.lCDView.edgeLength = 26;
-    self.lCDView.margin = 10.0;
+    self.lCDView.lineWidth = IS_IPAD ? 16.0 : 8.0;
+    self.lCDView.edgeLength = IS_IPAD ? 52.0 : 26;
+    self.lCDView.margin = IS_IPAD ? 20.0 : 10.0;
     self.lCDView.backgroundColor = [UIColor clearColor];
-    self.lCDView.glowSize = 10.0;
+    self.lCDView.glowSize = IS_IPAD ? 20.0 : 10.0;
     self.lCDView.glowColor = UIColorFromRGB(0x00ffff);
     self.lCDView.innerGlowColor = UIColorFromRGB(0x00ffff);
-    self.lCDView.innerGlowSize = 3.0;
+    self.lCDView.innerGlowSize = IS_IPAD ? 6.0 : 3.0;
     [self.lCDView resetSize];
 }
 - (UIStatusBarStyle)preferredStatusBarStyle
