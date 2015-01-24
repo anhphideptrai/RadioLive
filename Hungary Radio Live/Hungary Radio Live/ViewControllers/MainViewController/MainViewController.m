@@ -13,10 +13,14 @@
 #import <MarqueeLabel.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "SleepTimerViewController.h"
+#import <ZGCountDownTimer.h>
 
-@interface MainViewController ()<STKAudioPlayerDelegate>{
+@interface MainViewController ()<STKAudioPlayerDelegate, SleepTimerViewControllerDelegate, ZGCountDownTimerDelegate>{
     NSTimer* timer;
     MPVolumeView *volumeView;
+    ITEM_TAG totalTimer;
+    TIMER_STATUS currentTimerStatus;
+    ZGCountDownTimer *countDown;
 }
 @property (strong, nonatomic) IBOutlet UIButton *btChannel;
 @property (strong, nonatomic) IBOutlet UIView *volumeFrame;
@@ -84,7 +88,19 @@
     
     // Set as delegate of 'menu item view'
     [self.menuItemView setDelegate:self];
-    
+    [self setupCountDown];
+}
+- (void)setupCountDown{
+    currentTimerStatus = NONE_STATUS;
+    if (!countDown) {
+        countDown = [ZGCountDownTimer countDownTimerWithIdentifier:nil];
+        [countDown setDelegate:self];
+        [countDown resetCountDown];
+        [countDown setTotalCountDownTime:0];
+        [countDown setupCountDownForTheFirstTime:^(ZGCountDownTimer *timer) {
+        } restoreFromBackUp:^(ZGCountDownTimer *timer) {
+        }];
+    }
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -157,6 +173,7 @@
     [self.menuButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     if (index == 0) {
         SleepTimerViewController *sleepTimerVC = [[SleepTimerViewController alloc] initWithNibName:NAME_XIB_SLEEP_TIMER_VIEW_CONTROLLER bundle:nil];
+        [sleepTimerVC setDelegate:self];
         [self presentViewController:sleepTimerVC animated:YES completion:^{
             
         }];
@@ -278,5 +295,44 @@
         NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
         _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
     }];
+}
+#pragma mark - SleepTimerViewControllerDelegate Methods
+- (TIMER_STATUS)currentStatusTimer:(SleepTimerViewController*)sleepTimerVC{
+    return currentTimerStatus;
+}
+- (NSString*)updateTextShowTimer:(SleepTimerViewController*)sleepTimerVC{
+    if (countDown) {
+        NSTimeInterval remainTime = countDown.totalCountDownTime - countDown.timePassed;
+        return [NSString stringWithFormat:@"%02d:%02d:%02d", (int)remainTime/60/60, (int)remainTime/60%60, (int)remainTime%60];
+        
+    }else{
+        return @"00:00:00";
+    }
+}
+- (void)startSleepTimer:(SleepTimerViewController*)sleepTimerVC withTimer:(ITEM_TAG)totalT{
+    totalTimer = totalT;
+    if (countDown) {
+        [countDown resetCountDown];
+        [countDown setTotalCountDownTime:totalTimer*60];
+        [countDown startCountDown];
+    }
+    currentTimerStatus = TIMERING_STATUS;
+}
+- (void)cancelSleepTimer:(SleepTimerViewController*)sleepTimerVC{
+    if (countDown) {
+        [countDown resetCountDown];
+        [countDown setTotalCountDownTime:0];
+    }
+    currentTimerStatus = NONE_STATUS;
+}
+- (int)totalTimer:(SleepTimerViewController*)sleepTimerVC{
+    return totalTimer;
+}
+#pragma mark - ZGCountDownTimerDelegate Methods
+- (void)countDownCompleted:(ZGCountDownTimer *)sender{
+    if (_audioPlayer) {
+        [_audioPlayer stop];
+    }
+    [self cancelSleepTimer:nil];
 }
 @end
