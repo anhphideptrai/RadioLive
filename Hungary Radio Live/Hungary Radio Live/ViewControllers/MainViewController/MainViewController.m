@@ -50,7 +50,7 @@
     [_waveFormView setWaveColor:_orange_color_];
     [_waveFormView setPrimaryWaveLineWidth:1.f];
     [_waveFormView setSecondaryWaveLineWidth:.5f];
-    [_waveFormView setFrequency:10.f];
+    [_waveFormView setFrequency:3.f];
     
     
     
@@ -220,7 +220,7 @@
 }
 -(void) setupTimer
 {
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.005f target:self selector:@selector(tick) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.02f target:self selector:@selector(tick) userInfo:nil repeats:YES];
 }
 -(void) updateControls
 {
