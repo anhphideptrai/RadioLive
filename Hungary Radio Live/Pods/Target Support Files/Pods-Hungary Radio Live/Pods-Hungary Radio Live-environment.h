@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_ASOAnimatedButton_TwoStateButton 0
 #define COCOAPODS_VERSION_PATCH_ASOAnimatedButton_TwoStateButton 1
 
+// Google-AdMob-Ads-SDK
+#define COCOAPODS_POD_AVAILABLE_Google_AdMob_Ads_SDK
+#define COCOAPODS_VERSION_MAJOR_Google_AdMob_Ads_SDK 6
+#define COCOAPODS_VERSION_MINOR_Google_AdMob_Ads_SDK 12
+#define COCOAPODS_VERSION_PATCH_Google_AdMob_Ads_SDK 2
+
 // MarqueeLabel
 #define COCOAPODS_POD_AVAILABLE_MarqueeLabel
 #define COCOAPODS_VERSION_MAJOR_MarqueeLabel 2

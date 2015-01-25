@@ -141,6 +141,10 @@
     return UIStatusBarStyleLightContent;
 }
 - (IBAction)actionClose:(id)sender {
+    if (timerUpdate) {
+        [timerUpdate invalidate];
+        timerUpdate = nil;
+    }
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 - (IBAction)actionItemClick:(id)sender{

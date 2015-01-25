@@ -290,7 +290,6 @@
     [[SlideNavigationController sharedInstance] closeMenuWithCompletion:^{
         NSURL* url = [NSURL URLWithString:channel.streamFileContent];
         STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
-        [STKDataSource setAudioFileTypeHintDefault:[[channel.streamFormat lowercaseString] isEqualToString:@"aac"]?kAudioFileAAC_ADTSType:kAudioFileMP3Type];
         [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
         NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
         _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];

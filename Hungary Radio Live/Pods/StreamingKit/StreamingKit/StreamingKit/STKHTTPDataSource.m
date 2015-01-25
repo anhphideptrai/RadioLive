@@ -331,8 +331,6 @@
         if (typeIdFromMimeType != 0)
         {
             audioFileTypeHint = typeIdFromMimeType;
-        }else if([STKDataSource audioFileTypeHintDefault]){
-            audioFileTypeHint = [STKDataSource audioFileTypeHintDefault];
         }
     }
     else if (self.httpStatusCode == 206)
@@ -361,10 +359,6 @@
         [self errorOccured];
         
         return NO;
-    }else{
-        if([STKDataSource audioFileTypeHintDefault]){
-            audioFileTypeHint = [STKDataSource audioFileTypeHintDefault];
-        }
     }
     
     return YES;
