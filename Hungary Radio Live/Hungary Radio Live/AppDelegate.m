@@ -45,7 +45,7 @@
         NSLog(@"Revealed %@", menu);
     }];
     
-    SplashScreenViewController *splashScreenViewController = [[SplashScreenViewController alloc] init];
+    SplashScreenViewController *splashScreenViewController = [[SplashScreenViewController alloc] initWithNibName:@"SplashScreenViewController" bundle:nil];
     self.window.rootViewController = splashScreenViewController;
     [self.window makeKeyAndVisible];
     return YES;

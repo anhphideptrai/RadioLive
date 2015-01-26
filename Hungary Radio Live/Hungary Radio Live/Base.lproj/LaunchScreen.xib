@@ -14,13 +14,48 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_wave.png" translatesAutoresizingMaskIntoConstraints="NO" id="VRz-hP-cN7">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNC-gh-9HC">
+                    <rect key="frame" x="0.0" y="64" width="480" height="266"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Hm-6H-pXT">
+                            <rect key="frame" x="140" y="33" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="AUF-aT-ScO"/>
+                                <constraint firstAttribute="width" constant="200" id="eUi-7A-bp8"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="2Hm-6H-pXT" secondAttribute="centerY" id="3wd-nj-STA"/>
+                        <constraint firstAttribute="centerX" secondItem="2Hm-6H-pXT" secondAttribute="centerX" id="A0b-K7-XKl"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Sweet Pea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxi-y1-XJE">
+                    <rect key="frame" x="0.0" y="420" width="480" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="3Kl-Ps-xYL"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="zwV-qK-NuZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.99215686270000003" green="0.56862745100000001" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="VRz-hP-cN7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Cwn-AA-PdQ"/>
+                <constraint firstItem="FNC-gh-9HC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ER9-6G-D7C"/>
                 <constraint firstItem="VRz-hP-cN7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ehh-1S-lLv"/>
+                <constraint firstAttribute="trailing" secondItem="FNC-gh-9HC" secondAttribute="trailing" id="Jjp-Wb-ZKB"/>
+                <constraint firstAttribute="bottom" secondItem="wxi-y1-XJE" secondAttribute="bottom" constant="10" id="MPA-yT-5Vx"/>
+                <constraint firstAttribute="bottom" secondItem="FNC-gh-9HC" secondAttribute="bottom" constant="150" id="TYZ-Pb-JcY"/>
+                <constraint firstItem="wxi-y1-XJE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Tru-cI-2JF"/>
                 <constraint firstAttribute="bottom" secondItem="VRz-hP-cN7" secondAttribute="bottom" id="bAi-7k-yra"/>
                 <constraint firstAttribute="trailing" secondItem="VRz-hP-cN7" secondAttribute="trailing" id="muQ-l1-MFX"/>
+                <constraint firstAttribute="trailing" secondItem="wxi-y1-XJE" secondAttribute="trailing" id="o91-Ng-khz"/>
+                <constraint firstItem="FNC-gh-9HC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="v5B-2B-bDY"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -29,5 +64,6 @@
     </objects>
     <resources>
         <image name="background_wave.png" width="1536" height="1194"/>
+        <image name="icon_speaker.png" width="697" height="694"/>
     </resources>
 </document>

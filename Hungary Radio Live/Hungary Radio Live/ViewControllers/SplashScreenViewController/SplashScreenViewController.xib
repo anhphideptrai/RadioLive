@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashScreenViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="TK1-sd-n4h"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_wave.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Bv-7C-aSV">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIP-Ny-CoV">
+                    <rect key="frame" x="0.0" y="64" width="600" height="386"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="wQc-6J-80Y">
+                            <rect key="frame" x="200" y="93" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="1WW-r6-PO2"/>
+                                <constraint firstAttribute="height" constant="200" id="itV-oC-xeR"/>
+                            </constraints>
+                        </imageView>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dtk-B0-URc">
+                            <rect key="frame" x="282" y="175" width="37" height="37"/>
+                            <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerY" secondItem="dtk-B0-URc" secondAttribute="centerY" id="6O3-gi-J51"/>
+                        <constraint firstAttribute="centerY" secondItem="wQc-6J-80Y" secondAttribute="centerY" id="OCI-DL-qlF"/>
+                        <constraint firstAttribute="centerX" secondItem="dtk-B0-URc" secondAttribute="centerX" id="abd-MZ-0mb"/>
+                        <constraint firstAttribute="centerX" secondItem="wQc-6J-80Y" secondAttribute="centerX" id="oWj-cK-FT1"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Sweet Pea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kug-2p-yQH">
+                    <rect key="frame" x="0.0" y="540" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ALT-fu-aBq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.99215686274509807" green="0.56862745098039214" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5Bv-7C-aSV" secondAttribute="bottom" id="3x9-nQ-ihh"/>
+                <constraint firstItem="tIP-Ny-CoV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="8YO-Dh-8m7"/>
+                <constraint firstAttribute="trailing" secondItem="Kug-2p-yQH" secondAttribute="trailing" id="BmD-rk-x4y"/>
+                <constraint firstAttribute="bottom" secondItem="tIP-Ny-CoV" secondAttribute="bottom" constant="150" id="IsF-va-xEl"/>
+                <constraint firstItem="tIP-Ny-CoV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Pdx-Z6-gJJ"/>
+                <constraint firstItem="5Bv-7C-aSV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dT7-bC-hx1"/>
+                <constraint firstItem="5Bv-7C-aSV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="k3F-ez-Tkf"/>
+                <constraint firstAttribute="trailing" secondItem="5Bv-7C-aSV" secondAttribute="trailing" id="lxM-p8-Tl3"/>
+                <constraint firstAttribute="trailing" secondItem="tIP-Ny-CoV" secondAttribute="trailing" id="oXb-qL-NNV"/>
+                <constraint firstAttribute="bottom" secondItem="Kug-2p-yQH" secondAttribute="bottom" constant="10" id="q0x-ZT-hfR"/>
+                <constraint firstItem="Kug-2p-yQH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wvn-AD-VVX"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="background_wave.png" width="1536" height="1194"/>
+        <image name="icon_speaker.png" width="697" height="694"/>
+    </resources>
+</document>

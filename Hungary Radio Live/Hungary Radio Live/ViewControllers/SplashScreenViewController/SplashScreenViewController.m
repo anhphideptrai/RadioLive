@@ -15,7 +15,6 @@
 
 @interface SplashScreenViewController (){
     UIImageView *bgView;
-    UIActivityIndicatorView *loadingView;
     AppDelegate *appDelegate;
 }
 
@@ -23,16 +22,10 @@
 
 @implementation SplashScreenViewController
 
--(void)loadView{
-    [super loadView];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
-    [self initSubView];
     [[ConfigManager getInstance] loadConfig:CONFIG_URL finished:^(BOOL success, ConfigApp *configApp) {
-        [loadingView stopAnimating];
         appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
         if (success) {
             appDelegate.config = configApp;
@@ -66,20 +59,5 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
-}
-
-- (void)initSubView{
-    bgView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    CGRect tmpRect = self.view.frame;
-    tmpRect.origin.x = tmpRect.size.width/2 - 20;
-    tmpRect.origin.y = tmpRect.size.height/2 - 20;
-    tmpRect.size.width = 40;
-    tmpRect.size.height = 40;
-    [loadingView setFrame:tmpRect];
-    [self.view addSubview:bgView];
-    [self.view addSubview:loadingView];
-    [bgView setImage:[UIImage imageNamed:@"background_wave.png"]];
-    [loadingView startAnimating];
 }
 @end
