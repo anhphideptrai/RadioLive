@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B221F24E1A46DC44004E91FE /* background_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24D1A46DC44004E91FE /* background_wave.png */; };
 		B221F2501A46E738004E91FE /* icon_speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24F1A46E738004E91FE /* icon_speaker.png */; };
+		B24703E61A75B7DD0046EA6D /* RadioChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703E41A75B7DD0046EA6D /* RadioChannel.m */; };
 		B279E55A1A710F6D001E9C07 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5521A710F6D001E9C07 /* star.png */; };
 		B279E55B1A710F6D001E9C07 /* star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5531A710F6D001E9C07 /* star-selected.png */; };
 		B279E55C1A710F6D001E9C07 /* star-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5541A710F6D001E9C07 /* star-selected@2x.png */; };
@@ -24,7 +25,6 @@
 		B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = B2929F911A481C8A0058984B /* AnimationMenuCustom.m */; };
 		B2929F951A481C8A0058984B /* iPad_AnimationMenuCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2929F921A481C8A0058984B /* iPad_AnimationMenuCustom.xib */; };
 		B2929F961A481C8A0058984B /* iPhone_AnimationMenuCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2929F931A481C8A0058984B /* iPhone_AnimationMenuCustom.xib */; };
-		B2929FA51A491E870058984B /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2929FA41A491E870058984B /* Channel.m */; };
 		B2929FB21A49B21D0058984B /* darkBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAE1A49B21D0058984B /* darkBackground.png */; };
 		B2929FB31A49B21D0058984B /* darkBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2929FAF1A49B21D0058984B /* darkBackground@2x.png */; };
 		B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29CDFF91A7210A800C09E3B /* SleepTimerViewController.m */; };
@@ -89,6 +89,8 @@
 		860DE5E5C5541AE954AD6101 /* libPods-Hungary Radio Live.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hungary Radio Live.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221F24D1A46DC44004E91FE /* background_wave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_wave.png; path = Resource/Images/background_wave.png; sourceTree = "<group>"; };
 		B221F24F1A46E738004E91FE /* icon_speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_speaker.png; path = Resource/Images/icon_speaker.png; sourceTree = "<group>"; };
+		B24703E41A75B7DD0046EA6D /* RadioChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioChannel.m; path = Common/RadioChannel.m; sourceTree = "<group>"; };
+		B24703E51A75B7DD0046EA6D /* RadioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioChannel.h; path = Common/RadioChannel.h; sourceTree = "<group>"; };
 		B279E5521A710F6D001E9C07 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resource/Images/star.png; sourceTree = "<group>"; };
 		B279E5531A710F6D001E9C07 /* star-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected.png"; path = "Resource/Images/star-selected.png"; sourceTree = "<group>"; };
 		B279E5541A710F6D001E9C07 /* star-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected@2x.png"; path = "Resource/Images/star-selected@2x.png"; sourceTree = "<group>"; };
@@ -108,8 +110,6 @@
 		B2929F911A481C8A0058984B /* AnimationMenuCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationMenuCustom.m; sourceTree = "<group>"; };
 		B2929F921A481C8A0058984B /* iPad_AnimationMenuCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPad_AnimationMenuCustom.xib; sourceTree = "<group>"; };
 		B2929F931A481C8A0058984B /* iPhone_AnimationMenuCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhone_AnimationMenuCustom.xib; sourceTree = "<group>"; };
-		B2929FA31A491E870058984B /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Channel.h; path = Common/Channel.h; sourceTree = "<group>"; };
-		B2929FA41A491E870058984B /* Channel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Channel.m; path = Common/Channel.m; sourceTree = "<group>"; };
 		B2929FAE1A49B21D0058984B /* darkBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = darkBackground.png; path = Resource/Images/darkBackground.png; sourceTree = "<group>"; };
 		B2929FAF1A49B21D0058984B /* darkBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "darkBackground@2x.png"; path = "Resource/Images/darkBackground@2x.png"; sourceTree = "<group>"; };
 		B29CDFF81A7210A800C09E3B /* SleepTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SleepTimerViewController.h; path = ViewControllers/SleepTimerViewController/SleepTimerViewController.h; sourceTree = "<group>"; };
@@ -313,6 +313,8 @@
 		B2C94D571A4486FE00B9CA95 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B24703E41A75B7DD0046EA6D /* RadioChannel.m */,
+				B24703E51A75B7DD0046EA6D /* RadioChannel.h */,
 				B2F9382E1A4B57D700C5BEB6 /* SQLiteManager.h */,
 				B2F9382F1A4B57D700C5BEB6 /* SQLiteManager.m */,
 				B2C94DB91A45CAD700B9CA95 /* SampleQueueId.h */,
@@ -320,8 +322,6 @@
 				B2C94D581A44874300B9CA95 /* Constants.h */,
 				B2C94D591A44875900B9CA95 /* Utils.h */,
 				B2C94D5A1A44875900B9CA95 /* Utils.m */,
-				B2929FA31A491E870058984B /* Channel.h */,
-				B2929FA41A491E870058984B /* Channel.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -595,10 +595,10 @@
 				B2C94D331A4484A200B9CA95 /* main.m in Sources */,
 				B2C94D9E1A4493F900B9CA95 /* MainViewController.m in Sources */,
 				B2C94DBB1A45CAD700B9CA95 /* SampleQueueId.m in Sources */,
-				B2929FA51A491E870058984B /* Channel.m in Sources */,
 				B279E5681A7153BB001E9C07 /* FBLCDFont.m in Sources */,
 				B2C94DA61A44948F00B9CA95 /* ChannelsViewController.m in Sources */,
 				B2929F941A481C8A0058984B /* AnimationMenuCustom.m in Sources */,
+				B24703E61A75B7DD0046EA6D /* RadioChannel.m in Sources */,
 				B2F938301A4B57D700C5BEB6 /* SQLiteManager.m in Sources */,
 				B279E5691A7153BB001E9C07 /* FBLCDFontView.m in Sources */,
 			);

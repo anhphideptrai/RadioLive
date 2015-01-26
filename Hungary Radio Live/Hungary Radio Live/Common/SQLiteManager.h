@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "Channel.h"
+#import "RadioChannel.h"
 
 @interface SQLiteManager : NSObject
 + (SQLiteManager *) getInstance;

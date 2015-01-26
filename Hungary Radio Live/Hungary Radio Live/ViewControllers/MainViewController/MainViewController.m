@@ -286,12 +286,12 @@
 {
 }
 #pragma mark - ChannelsViewControllerDelegate Methods -
-- (void) didSelectedChannel:(Channel*)channel{
+- (void) didSelectedChannel:(RadioChannel*)channel{
     [[SlideNavigationController sharedInstance] closeMenuWithCompletion:^{
-        NSURL* url = [NSURL URLWithString:channel.streamFileContent];
+        NSURL* url = [NSURL URLWithString:channel.url];
         STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
         [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
-        NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.stationName, channel.stationLocation, channel.stationURL];
+        NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.title, channel.country, channel.pkey];
         _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
     }];
 }

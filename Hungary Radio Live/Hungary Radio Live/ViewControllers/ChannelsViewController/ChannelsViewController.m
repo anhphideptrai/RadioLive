@@ -47,8 +47,8 @@
 
 - (void)prepareDataForView{
     BOOL found;
-    for (Channel *channel in channelList) {
-        NSString *c = [[channel.stationName substringToIndex:1] uppercaseString];
+    for (RadioChannel *channel in channelList) {
+        NSString *c = [[channel.title substringToIndex:1] uppercaseString];
         found = NO;
         for (NSString *str in [sections allKeys])
         {
@@ -63,9 +63,9 @@
         }
     }
     // Loop again and sort the books into their respective keys
-    for (Channel *channel in channelList)
+    for (RadioChannel *channel in channelList)
     {
-        [[sections objectForKey:[[channel.stationName uppercaseString] substringToIndex:1]] addObject:channel];
+        [[sections objectForKey:[[channel.title uppercaseString] substringToIndex:1]] addObject:channel];
     }
 }
 
@@ -108,14 +108,14 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    Channel *channel = [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    RadioChannel *channel = [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     [cell.textLabel setFont:_CONTACT_TITLE_CELL_FONT_];
     [cell.textLabel setTextColor:[UIColor whiteColor]];
-    [cell.textLabel setText:channel.stationName];
+    [cell.textLabel setText:channel.title];
     
     [cell.detailTextLabel setFont:_CONTACT_SUBTITLE_CELL_FONT_];
     [cell.detailTextLabel setTextColor:_orange_color_];
-    cell.detailTextLabel.text = channel.stationLocation;
+    cell.detailTextLabel.text = channel.pkey;
     
     [cell setBackgroundColor:[UIColor clearColor]];
     

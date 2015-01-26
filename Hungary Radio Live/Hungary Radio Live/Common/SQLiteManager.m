@@ -44,7 +44,7 @@ static SQLiteManager *thisInstance;
     NSMutableArray *resultArray = [[NSMutableArray alloc]init];
     sqlite3_stmt    *statement;
     const char *dbpath = [_databasePath UTF8String];
-    Channel *channel;
+    RadioChannel *channel;
     if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
     {
         NSString *querySQL = @"select * from channel";
@@ -54,16 +54,14 @@ static SQLiteManager *thisInstance;
         {
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
-                channel = [[Channel alloc] init];
-                channel.stationId = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
-                channel.stationName = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
-                channel.stationURL = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
-                channel.stationLocation = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
-                channel.stationContent = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 4)];
-                channel.streamFormat = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 5)];
-                channel.streamFileURL = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 6)];
-                channel.streamFileContent = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 7)];
-                channel.bitRate = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 8)];
+                channel = [[RadioChannel alloc] init];
+                channel.pkey = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                channel.pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                channel.title = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
+                channel.local_pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                channel.url = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 4)];
+                channel.country = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 5)];
+                channel.isFavorite = sqlite3_column_int(statement, 6);
                 [resultArray addObject:channel];
             }
             sqlite3_finalize(statement);

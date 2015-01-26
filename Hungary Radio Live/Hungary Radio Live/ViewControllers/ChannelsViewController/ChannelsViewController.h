@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Channel.h"
+#import "RadioChannel.h"
 @protocol ChannelsViewControllerDelegate <NSObject>
 @optional
-- (void) didSelectedChannel:(Channel*)channel;
+- (void) didSelectedChannel:(RadioChannel*)channel;
 @end
 @interface ChannelsViewController : UIViewController
 @property (nonatomic, strong) id<ChannelsViewControllerDelegate> delegate;
