@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ChannelsViewController.h"
 #import "SlideNavigationController.h"
+#import "SplashScreenViewController.h"
 #import "MainViewController.h"
 #import <AVFoundation/AVFoundation.h>
 @interface AppDelegate ()
@@ -24,34 +25,29 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.navController = [[SlideNavigationController alloc] init];
-    
     MainViewController *mainVC = [[MainViewController alloc] initWithNibName:MAIN_XIB_FILE_NAME bundle:nil];
-    
     ChannelsViewController *leftMenu = [[ChannelsViewController alloc] initWithNibName:CHANNELS_XIB_FILE_NAME bundle:nil];
     [leftMenu setDelegate:mainVC];
     [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     [SlideNavigationController sharedInstance].panGestureSideOffset = 50.f;
     [SlideNavigationController sharedInstance].view.layer.shadowColor = [UIColor blackColor].CGColor;
     [self.navController addChildViewController:mainVC];
-    self.window.rootViewController = self.navController;
-    [self.window makeKeyAndVisible];
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidClose object:nil queue:nil usingBlock:^(NSNotification *note) {
         NSString *menu = note.userInfo[@"menu"];
         NSLog(@"Closed %@", menu);
     }];
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidOpen object:nil queue:nil usingBlock:^(NSNotification *note) {
         NSString *menu = note.userInfo[@"menu"];
         NSLog(@"Opened %@", menu);
     }];
-    
     [[NSNotificationCenter defaultCenter] addObserverForName:SlideNavigationControllerDidReveal object:nil queue:nil usingBlock:^(NSNotification *note) {
         NSString *menu = note.userInfo[@"menu"];
         NSLog(@"Revealed %@", menu);
     }];
-
     
+    SplashScreenViewController *splashScreenViewController = [[SplashScreenViewController alloc] init];
+    self.window.rootViewController = splashScreenViewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -46,7 +46,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Sh1-4u-vAx" secondAttribute="bottom" constant="2" id="1zG-D7-aba"/>
                         <constraint firstItem="ZNa-gS-t7M" firstAttribute="top" secondItem="Cpk-ve-ZeG" secondAttribute="top" id="GcG-cI-EjB"/>
@@ -232,7 +232,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ies-sN-c5w" secondAttribute="trailing" id="2u9-kO-bdi"/>
                 <constraint firstItem="Cpk-ve-ZeG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7Om-dg-oAA"/>

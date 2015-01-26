@@ -25,4 +25,20 @@
 #define _orange_color_      [UIColor colorWithRed:253.f/255.f green:145.f/255.f blue:29.f/255.f alpha:1.0]
 #define _MENU_DEFAULT_SLIDE_OFFSET_ (IS_IPAD ? 300 : 60)
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00) >> 8))/255.0 blue:((float)((rgbValue) & 0xFF))/255.0 alpha:1.0]
+
+
+#define key_status_app @"status.app"
+#define key_url_share @"url.share"
+#define key_version @"version"
+#define key_expired_day @"expired.day"
+#define key_version_update @"version.update"
+#define key_id_channel_default @"id.channel.default"
+#define key_url_update @"url.update"
+
+
+#define SELECTED_ID_CHANNEL_DEFAUL @"14044"
+#define STATUS_APP_DEFAUL @"beta"
+#define VERSION_UPDATE_DEFAULT @"100"
+#define CONFIG_URL @"https://radio-ios-app.googlecode.com/git/get_config_hungari_radio_app.json"
+
 #endif

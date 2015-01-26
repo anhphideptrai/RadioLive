@@ -10,6 +10,9 @@
 		B221F24E1A46DC44004E91FE /* background_wave.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24D1A46DC44004E91FE /* background_wave.png */; };
 		B221F2501A46E738004E91FE /* icon_speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = B221F24F1A46E738004E91FE /* icon_speaker.png */; };
 		B24703E61A75B7DD0046EA6D /* RadioChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703E41A75B7DD0046EA6D /* RadioChannel.m */; };
+		B24703E91A76640E0046EA6D /* ConfigApp.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703E81A76640E0046EA6D /* ConfigApp.m */; };
+		B24703EC1A7665620046EA6D /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703EB1A7665620046EA6D /* ConfigManager.m */; };
+		B24703F01A76686E0046EA6D /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703EF1A76686E0046EA6D /* SplashScreenViewController.m */; };
 		B279E55A1A710F6D001E9C07 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5521A710F6D001E9C07 /* star.png */; };
 		B279E55B1A710F6D001E9C07 /* star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5531A710F6D001E9C07 /* star-selected.png */; };
 		B279E55C1A710F6D001E9C07 /* star-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5541A710F6D001E9C07 /* star-selected@2x.png */; };
@@ -91,6 +94,12 @@
 		B221F24F1A46E738004E91FE /* icon_speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_speaker.png; path = Resource/Images/icon_speaker.png; sourceTree = "<group>"; };
 		B24703E41A75B7DD0046EA6D /* RadioChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadioChannel.m; path = Common/RadioChannel.m; sourceTree = "<group>"; };
 		B24703E51A75B7DD0046EA6D /* RadioChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadioChannel.h; path = Common/RadioChannel.h; sourceTree = "<group>"; };
+		B24703E71A76640E0046EA6D /* ConfigApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigApp.h; path = Common/ConfigApp.h; sourceTree = "<group>"; };
+		B24703E81A76640E0046EA6D /* ConfigApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigApp.m; path = Common/ConfigApp.m; sourceTree = "<group>"; };
+		B24703EA1A7665620046EA6D /* ConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigManager.h; path = Common/ConfigManager.h; sourceTree = "<group>"; };
+		B24703EB1A7665620046EA6D /* ConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigManager.m; path = Common/ConfigManager.m; sourceTree = "<group>"; };
+		B24703EE1A76686E0046EA6D /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashScreenViewController.h; path = ViewControllers/SplashScreenViewController/SplashScreenViewController.h; sourceTree = "<group>"; };
+		B24703EF1A76686E0046EA6D /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashScreenViewController.m; path = ViewControllers/SplashScreenViewController/SplashScreenViewController.m; sourceTree = "<group>"; };
 		B279E5521A710F6D001E9C07 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resource/Images/star.png; sourceTree = "<group>"; };
 		B279E5531A710F6D001E9C07 /* star-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected.png"; path = "Resource/Images/star-selected.png"; sourceTree = "<group>"; };
 		B279E5541A710F6D001E9C07 /* star-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected@2x.png"; path = "Resource/Images/star-selected@2x.png"; sourceTree = "<group>"; };
@@ -211,6 +220,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B24703ED1A76685F0046EA6D /* SplashScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B24703EE1A76686E0046EA6D /* SplashScreenViewController.h */,
+				B24703EF1A76686E0046EA6D /* SplashScreenViewController.m */,
+			);
+			name = SplashScreenViewController;
+			sourceTree = "<group>";
+		};
 		B279E5601A71537B001E9C07 /* LCDView */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +321,7 @@
 		B2C94D561A4486F400B9CA95 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B24703ED1A76685F0046EA6D /* SplashScreenViewController */,
 				B29CDFF71A72107800C09E3B /* SleepTimerViewController */,
 				B2C94DA31A44945C00B9CA95 /* ChannelsViewController */,
 				B2C94D9B1A4493BB00B9CA95 /* MainViewController */,
@@ -313,6 +332,10 @@
 		B2C94D571A4486FE00B9CA95 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B24703EA1A7665620046EA6D /* ConfigManager.h */,
+				B24703EB1A7665620046EA6D /* ConfigManager.m */,
+				B24703E71A76640E0046EA6D /* ConfigApp.h */,
+				B24703E81A76640E0046EA6D /* ConfigApp.m */,
 				B24703E41A75B7DD0046EA6D /* RadioChannel.m */,
 				B24703E51A75B7DD0046EA6D /* RadioChannel.h */,
 				B2F9382E1A4B57D700C5BEB6 /* SQLiteManager.h */,
@@ -589,10 +612,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */,
+				B24703F01A76686E0046EA6D /* SplashScreenViewController.m in Sources */,
 				B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */,
 				B2C94D5B1A44875900B9CA95 /* Utils.m in Sources */,
 				B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */,
 				B2C94D331A4484A200B9CA95 /* main.m in Sources */,
+				B24703EC1A7665620046EA6D /* ConfigManager.m in Sources */,
+				B24703E91A76640E0046EA6D /* ConfigApp.m in Sources */,
 				B2C94D9E1A4493F900B9CA95 /* MainViewController.m in Sources */,
 				B2C94DBB1A45CAD700B9CA95 /* SampleQueueId.m in Sources */,
 				B279E5681A7153BB001E9C07 /* FBLCDFont.m in Sources */,

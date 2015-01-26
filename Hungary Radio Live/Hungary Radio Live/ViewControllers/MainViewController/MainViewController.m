@@ -14,6 +14,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "SleepTimerViewController.h"
 #import <ZGCountDownTimer.h>
+#import "SQLiteManager.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()<STKAudioPlayerDelegate, SleepTimerViewControllerDelegate, ZGCountDownTimerDelegate>{
     NSTimer* timer;
@@ -21,6 +23,7 @@
     ITEM_TAG totalTimer;
     TIMER_STATUS currentTimerStatus;
     ZGCountDownTimer *countDown;
+    RadioChannel *currentChannel;
 }
 @property (strong, nonatomic) IBOutlet UIButton *btChannel;
 @property (strong, nonatomic) IBOutlet UIView *volumeFrame;
@@ -42,7 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[self navigationController] setNavigationBarHidden:YES animated:YES];
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
     [self.view setBackgroundColor:[UIColor grayColor]];
     
     [[SlideNavigationController sharedInstance] setPortraitSlideOffset:_MENU_DEFAULT_SLIDE_OFFSET_];
@@ -89,6 +92,12 @@
     // Set as delegate of 'menu item view'
     [self.menuItemView setDelegate:self];
     [self setupCountDown];
+    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    currentChannel = [[SQLiteManager getInstance] loadChannelWithID:appDelegate.config.iDchannelDefault];
+    if (currentChannel) {
+        NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", currentChannel.title, currentChannel.country, [NSString stringWithFormat:@"# %@", currentChannel.pkey]];
+        _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
+    }
 }
 - (void)setupCountDown{
     currentTimerStatus = NONE_STATUS;
@@ -117,6 +126,14 @@
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     [self resignFirstResponder];
+}
+- (void)playWithChannel:(RadioChannel*)channel{
+    currentChannel = channel;
+    NSURL* url = [NSURL URLWithString:channel.url];
+    STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
+    [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
+    NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.title, channel.country, [NSString stringWithFormat:@"# %@", channel.pkey]];
+    _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
 }
 -(void)remoteControlReceivedWithEvent:(UIEvent *)receivedEvent
 {
@@ -206,6 +223,8 @@
         [_btPlayOrPause setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PauseControl" ofType:@"png"]] forState:UIControlStateNormal];
         [_audioPlayer resume];
         
+    }else if (_audioPlayer.state == STKAudioPlayerStateStopped || _audioPlayer.state == STKAudioPlayerStateReady){
+        [self playWithChannel:currentChannel];
     }
     else
     {
@@ -288,11 +307,7 @@
 #pragma mark - ChannelsViewControllerDelegate Methods -
 - (void) didSelectedChannel:(RadioChannel*)channel{
     [[SlideNavigationController sharedInstance] closeMenuWithCompletion:^{
-        NSURL* url = [NSURL URLWithString:channel.url];
-        STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
-        [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
-        NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.title, channel.country, [NSString stringWithFormat:@"# %@", channel.pkey]];
-        _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
+        [self playWithChannel:channel];
     }];
 }
 #pragma mark - SleepTimerViewControllerDelegate Methods

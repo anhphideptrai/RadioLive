@@ -9,12 +9,14 @@
 #import "ChannelsViewController.h"
 #import "SQLiteManager.h"
 #import <SVSegmentedControl.h>
+#import "AppDelegate.h"
 
 @interface ChannelsViewController ()<UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *channelList;
     NSMutableDictionary *sections;
     NSIndexPath *lastSelected;
     SVSegmentedControl *redSC;
+    AppDelegate *appDelegate;
 }
 @property (strong, nonatomic) IBOutlet UITableView *contentTableView;
 
@@ -25,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor blackColor]];
+    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     [self loadDataForViewWithAllChannel:YES];
     
     redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:@"All", @"Favorite", nil]];
@@ -137,15 +140,17 @@
     [cell setSelectedBackgroundView:backgroudSelectedCell];
     [cell setTintColor:_orange_color_];
     [cell setAccessoryView:nil];
-    if (lastSelected && [indexPath compare:lastSelected] == NSOrderedSame) {
+    if ([[channel.pkey lowercaseString] isEqualToString:[appDelegate.config.iDchannelDefault lowercaseString]]) {
         [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CheckSelected.png"]]];
+        lastSelected = indexPath;
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if ([indexPath compare:lastSelected] != NSOrderedSame){
+    RadioChannel *channel = [[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+    if (![[channel.pkey lowercaseString] isEqualToString:[appDelegate.config.iDchannelDefault lowercaseString]]){
         UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
         [cell setAccessoryView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CheckSelected.png"]]];
         if (lastSelected) {
@@ -154,7 +159,10 @@
         }
         lastSelected = indexPath;
         if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedChannel:)]) {
-            [self.delegate didSelectedChannel:[[sections valueForKey:[[[sections allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row]];
+            [[NSUserDefaults standardUserDefaults] setValue:channel.pkey forKey:key_id_channel_default];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            appDelegate.config.iDchannelDefault = channel.pkey;
+            [self.delegate didSelectedChannel:channel];
         }
     }
 }
