@@ -13,4 +13,7 @@
 @interface SQLiteManager : NSObject
 + (SQLiteManager *) getInstance;
 - (NSMutableArray*)getChannels;
+- (NSMutableArray*)getFavoriteChannels;
+- (RadioChannel*)loadChannelWithID:(NSString*)iDChannel;
+- (BOOL)addAndRemoveFavoriteChannelWithIDChannel:(NSString*)iDChannel isAdd:(BOOL)isAdd;
 @end

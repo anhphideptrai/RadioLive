@@ -25,11 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor blackColor]];
-    channelList = [[SQLiteManager getInstance] getChannels];
-    sections = [[NSMutableDictionary alloc] init];
-    [self prepareDataForView];
-    [self.contentTableView setBounces:YES];
-    [self.contentTableView reloadData];
+    [self loadDataForViewWithAllChannel:YES];
     
     redSC = [[SVSegmentedControl alloc] initWithSectionTitles:[NSArray arrayWithObjects:@"All", @"Favorite", nil]];
     [redSC addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
@@ -39,7 +35,17 @@
     [redSC setSelectedSegmentIndex:0 animated:NO];
     [self.view addSubview:redSC];
 }
-
+- (void)loadDataForViewWithAllChannel:(BOOL)isAllChannels{
+    if (isAllChannels) {
+        channelList = [[SQLiteManager getInstance] getChannels];
+    }else{
+        channelList = [[SQLiteManager getInstance] getFavoriteChannels];
+    }
+    sections = [[NSMutableDictionary alloc] init];
+    [self prepareDataForView];
+    [self.contentTableView setBounces:YES];
+    [self.contentTableView reloadData];
+}
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     redSC.center = CGPointMake(self.contentTableView.frame.size.width/2, (64 - 20)/2 + 20);
@@ -71,7 +77,7 @@
 
 #pragma mark - UIControlEventValueChanged
 - (void)segmentedControlChangedValue:(SVSegmentedControl*)segmentedControl {
-
+    [self loadDataForViewWithAllChannel:segmentedControl.selectedSegmentIndex == 0];
 }
 
 #pragma mark - Table view data source
@@ -115,7 +121,7 @@
     
     [cell.detailTextLabel setFont:_CONTACT_SUBTITLE_CELL_FONT_];
     [cell.detailTextLabel setTextColor:_orange_color_];
-    cell.detailTextLabel.text = channel.pkey;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"# %@", channel.pkey];
     
     [cell setBackgroundColor:[UIColor clearColor]];
     

@@ -70,4 +70,83 @@ static SQLiteManager *thisInstance;
     }
     return resultArray;
 }
+- (NSMutableArray*)getFavoriteChannels{
+    [self copyDatabase];
+    NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    RadioChannel *channel;
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = @"select * from channel where isFavorite != '0'";
+        const char *query_stmt = [querySQL UTF8String];
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                channel = [[RadioChannel alloc] init];
+                channel.pkey = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                channel.pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                channel.title = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
+                channel.local_pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                channel.url = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 4)];
+                channel.country = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 5)];
+                channel.isFavorite = sqlite3_column_int(statement, 6);
+                [resultArray addObject:channel];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
+    return resultArray;
+}
+- (RadioChannel*)loadChannelWithID:(NSString*)iDChannel{
+    [self copyDatabase];
+    sqlite3_stmt    *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    RadioChannel *channel;
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:@"select * from channel where pkey == '%@'", iDChannel];
+        const char *query_stmt = [querySQL UTF8String];
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            while (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                channel = [[RadioChannel alloc] init];
+                channel.pkey = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 0)];
+                channel.pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 1)];
+                channel.title = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 2)];
+                channel.local_pic = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 3)];
+                channel.url = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 4)];
+                channel.country = [NSString stringWithUTF8String:(char *) sqlite3_column_text(statement, 5)];
+                channel.isFavorite = sqlite3_column_int(statement, 6);
+                break;
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
+    return channel;
+}
+- (BOOL)addAndRemoveFavoriteChannelWithIDChannel:(NSString*)iDChannel isAdd:(BOOL)isAdd{
+    BOOL result = NO;
+    [self copyDatabase];
+    sqlite3_stmt *statement;
+    const char *dbpath = [_databasePath UTF8String];
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *insertSQL = [NSString stringWithFormat:
+                               @"UPDATE channel SET isFavorite = '%d' WHERE pkey == '%@'", isAdd, iDChannel];
+        const char *insert_stmt = [insertSQL UTF8String];
+        sqlite3_prepare_v2(_contactDB, insert_stmt,
+                           -1, &statement, NULL);
+        result = (sqlite3_step(statement) == SQLITE_DONE);
+        sqlite3_finalize(statement);
+        sqlite3_close(_contactDB);
+    }
+    return result;
+}
 @end
