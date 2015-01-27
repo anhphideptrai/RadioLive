@@ -34,11 +34,13 @@
 @property (strong, nonatomic) IBOutlet MarqueeLabel *lbChannelInfo;
 @property (nonatomic, strong) STKAudioPlayer *audioPlayer;
 @property (nonatomic) ASOAnimationStyle progressiveORConcurrentStyle;
+@property (strong, nonatomic) IBOutlet UIButton *btnFavorite;
 
 - (IBAction)actionClickBTChannel:(id)sender;
 - (IBAction)actionClickBTPlayOrPause:(id)sender;
 - (IBAction)actionBTPrevious:(id)sender;
 - (IBAction)actionBTNext:(id)sender;
+- (IBAction)actionFavorite:(id)sender;
 @end
 
 @implementation MainViewController
@@ -348,5 +350,7 @@
         [_audioPlayer stop];
     }
     [self cancelSleepTimer:nil];
+}
+- (IBAction)actionFavorite:(id)sender {
 }
 @end
