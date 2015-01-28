@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import <STKAudioPlayer.h>
 #import "SampleQueueId.h"
 #import <SCSiriWaveformView.h>
 #import <MarqueeLabel.h>
@@ -16,14 +15,16 @@
 #import <ZGCountDownTimer.h>
 #import "SQLiteManager.h"
 #import "AppDelegate.h"
+#import "AudioStreamer.h"
 
-@interface MainViewController ()<STKAudioPlayerDelegate, SleepTimerViewControllerDelegate, ZGCountDownTimerDelegate>{
+@interface MainViewController ()<SleepTimerViewControllerDelegate, ZGCountDownTimerDelegate>{
     NSTimer* timer;
     MPVolumeView *volumeView;
     ITEM_TAG totalTimer;
     TIMER_STATUS currentTimerStatus;
     ZGCountDownTimer *countDown;
     RadioChannel *currentChannel;
+    AudioStreamer *audioStreamer;
 }
 @property (strong, nonatomic) IBOutlet UIButton *btChannel;
 @property (strong, nonatomic) IBOutlet UIView *volumeFrame;
@@ -32,7 +33,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *btNext;
 @property (strong, nonatomic) IBOutlet SCSiriWaveformView *waveFormView;
 @property (strong, nonatomic) IBOutlet MarqueeLabel *lbChannelInfo;
-@property (nonatomic, strong) STKAudioPlayer *audioPlayer;
 @property (nonatomic) ASOAnimationStyle progressiveORConcurrentStyle;
 @property (strong, nonatomic) IBOutlet UIButton *btnFavorite;
 
@@ -56,13 +56,6 @@
     [_waveFormView setPrimaryWaveLineWidth:1.f];
     [_waveFormView setSecondaryWaveLineWidth:.5f];
     [_waveFormView setFrequency:3.f];
-    
-    
-    
-    _audioPlayer = [[STKAudioPlayer alloc] initWithOptions:(STKAudioPlayerOptions){ .flushQueueOnSeek = YES, .enableVolumeMixer = YES, .equalizerBandFrequencies = {50, 100, 200, 400, 800, 1600, 2600, 16000} }];
-    _audioPlayer.meteringEnabled = YES;
-    _audioPlayer.volume = 1.f;
-    _audioPlayer.delegate = self;
     
     [self setupTimer];
     [self updateControls];
@@ -123,19 +116,31 @@
         [volumeView setMinimumVolumeSliderImage:[UIImage imageNamed:@"Cell_Selected.png"] forState:UIControlStateNormal];
         [self.volumeFrame addSubview:volumeView];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(playbackStateChanged:)
+                                                 name:ASStatusChangedNotification
+                                               object:nil];
 }
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
     [self resignFirstResponder];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:ASStatusChangedNotification
+                                                  object:nil];
 }
 - (void)playWithChannel:(RadioChannel*)channel{
     currentChannel = channel;
     NSURL* url = [NSURL URLWithString:channel.url];
-    STKDataSource* dataSource = [STKAudioPlayer dataSourceFromURL:url];
-    [_audioPlayer setDataSource:dataSource withQueueItemId:[[SampleQueueId alloc] initWithUrl:url andCount:0]];
     NSString *text = [NSString stringWithFormat:@"%@ - %@ - %@", channel.title, channel.country, [NSString stringWithFormat:@"# %@", channel.pkey]];
     _lbChannelInfo.text = [NSString stringWithFormat:@"%@                      %@                      ", text, text];
+    if (audioStreamer) {
+        [audioStreamer stop];
+        audioStreamer = nil;
+    }
+    audioStreamer = [[AudioStreamer alloc] initWithURL:url];
+    [audioStreamer start];
+    
 }
 -(void)remoteControlReceivedWithEvent:(UIEvent *)receivedEvent
 {
@@ -145,15 +150,15 @@
         switch (receivedEvent.subtype)
         {
             case UIEventSubtypeRemoteControlPlay:
-                if (_audioPlayer) {
-                    [_audioPlayer resume];
+                if (audioStreamer) {
+                    [audioStreamer start];
                 }
                 break;
                 
             case  UIEventSubtypeRemoteControlPause:
                 // pause the video
-                if (_audioPlayer) {
-                    [_audioPlayer pause];
+                if (audioStreamer) {
+                    [audioStreamer pause];
                 }
                 break;
                 
@@ -215,22 +220,26 @@
 }
 
 - (IBAction)actionClickBTPlayOrPause:(id)sender {
-    if (!_audioPlayer)
+    if (!audioStreamer)
     {
+        if (currentChannel) {
+            audioStreamer = [[AudioStreamer alloc] initWithURL:[NSURL URLWithString:currentChannel.url]];
+            [audioStreamer start];
+        }
         return;
     }
     
-    if (_audioPlayer.state == STKAudioPlayerStatePaused)
+    if (audioStreamer.state == AS_PAUSED)
     {
         [_btPlayOrPause setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PauseControl" ofType:@"png"]] forState:UIControlStateNormal];
-        [_audioPlayer resume];
+        [audioStreamer start];
         
-    }else if (_audioPlayer.state == STKAudioPlayerStateStopped || _audioPlayer.state == STKAudioPlayerStateReady){
+    }else if (audioStreamer.state == AS_STOPPED){
         [self playWithChannel:currentChannel];
     }
     else
     {
-        [_audioPlayer pause];
+        [audioStreamer pause];
     }
 }
 
@@ -245,10 +254,10 @@
 }
 -(void) updateControls
 {
-    if (_audioPlayer == nil)
+    if (audioStreamer == nil)
     {
         [_btPlayOrPause setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PlayControl" ofType:@"png"]] forState:UIControlStateNormal];
-    }else if (_audioPlayer.state == STKAudioPlayerStatePlaying)
+    }else if (audioStreamer.state == AS_PLAYING)
     {
         [_btPlayOrPause setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"PauseControl" ofType:@"png"]] forState:UIControlStateNormal];;
     }
@@ -261,50 +270,17 @@
 }
 -(void) tick
 {
-    if (!_audioPlayer)
+    if (!audioStreamer)
     {
         [_waveFormView updateWithLevel:0];
         return;
     }
-    
-    if (_audioPlayer.currentlyPlayingQueueItemId == nil)
-    {
-
-        [_waveFormView updateWithLevel:0];
-        return;
-    }
-    CGFloat level = _audioPlayer.state == STKAudioPlayerStatePlaying ? pow(10, ([_audioPlayer averagePowerInDecibelsForChannel:1])/60 ): 0;
+    CGFloat level = audioStreamer.state == AS_PLAYING ? pow(10, ([audioStreamer averagePowerForChannel:1]) ): 0;
     [_waveFormView updateWithLevel:level];
 }
-
-#pragma mark - STKAudioPlayerDelegate Methods -
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer stateChanged:(STKAudioPlayerState)state previousState:(STKAudioPlayerState)previousState
+- (void)playbackStateChanged:(NSNotification *)aNotification
 {
-[self updateControls];
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer unexpectedError:(STKAudioPlayerErrorCode)errorCode
-{
-[self updateControls];
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didStartPlayingQueueItemId:(NSObject*)queueItemId
-{
-[self updateControls];
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishBufferingSourceWithQueueItemId:(NSObject*)queueItemId
-{
-[self updateControls];
-}
-
--(void) audioPlayer:(STKAudioPlayer*)audioPlayer didFinishPlayingQueueItemId:(NSObject*)queueItemId withReason:(STKAudioPlayerStopReason)stopReason andProgress:(double)progress andDuration:(double)duration
-{
-[self updateControls];
-}
-
--(void) audioPlayer:(STKAudioPlayer *)audioPlayer logInfo:(NSString *)line
-{
+    [self updateControls];
 }
 #pragma mark - ChannelsViewControllerDelegate Methods -
 - (void) didSelectedChannel:(RadioChannel*)channel{
@@ -346,8 +322,8 @@
 }
 #pragma mark - ZGCountDownTimerDelegate Methods
 - (void)countDownCompleted:(ZGCountDownTimer *)sender{
-    if (_audioPlayer) {
-        [_audioPlayer stop];
+    if (audioStreamer) {
+        [audioStreamer stop];
     }
     [self cancelSleepTimer:nil];
 }

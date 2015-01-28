@@ -14,6 +14,7 @@
 		B24703EC1A7665620046EA6D /* ConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703EB1A7665620046EA6D /* ConfigManager.m */; };
 		B24703F01A76686E0046EA6D /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703EF1A76686E0046EA6D /* SplashScreenViewController.m */; };
 		B24703F41A7687AF0046EA6D /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24703F31A7687AF0046EA6D /* SplashScreenViewController.xib */; };
+		B24703FE1A787F900046EA6D /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = B24703FD1A787F900046EA6D /* AudioStreamer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B279E55A1A710F6D001E9C07 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5521A710F6D001E9C07 /* star.png */; };
 		B279E55B1A710F6D001E9C07 /* star-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = B279E5531A710F6D001E9C07 /* star-selected.png */; };
 		B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */ = {isa = PBXBuildFile; fileRef = B279E5621A7153BB001E9C07 /* FBFontSymbol.m */; };
@@ -98,6 +99,8 @@
 		B24703EE1A76686E0046EA6D /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplashScreenViewController.h; path = ViewControllers/SplashScreenViewController/SplashScreenViewController.h; sourceTree = "<group>"; };
 		B24703EF1A76686E0046EA6D /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SplashScreenViewController.m; path = ViewControllers/SplashScreenViewController/SplashScreenViewController.m; sourceTree = "<group>"; };
 		B24703F31A7687AF0046EA6D /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = ViewControllers/SplashScreenViewController/SplashScreenViewController.xib; sourceTree = "<group>"; };
+		B24703FC1A787F900046EA6D /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamer.h; path = Common/AudioStreamer.h; sourceTree = "<group>"; };
+		B24703FD1A787F900046EA6D /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AudioStreamer.m; path = Common/AudioStreamer.m; sourceTree = "<group>"; };
 		B279E5521A710F6D001E9C07 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = star.png; path = Resource/Images/star.png; sourceTree = "<group>"; };
 		B279E5531A710F6D001E9C07 /* star-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "star-selected.png"; path = "Resource/Images/star-selected.png"; sourceTree = "<group>"; };
 		B279E5611A7153BB001E9C07 /* FBFontSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFontSymbol.h; path = Views/LCDView/FBFontSymbol.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 		B2C94D571A4486FE00B9CA95 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B24703FC1A787F900046EA6D /* AudioStreamer.h */,
+				B24703FD1A787F900046EA6D /* AudioStreamer.m */,
 				B24703EA1A7665620046EA6D /* ConfigManager.h */,
 				B24703EB1A7665620046EA6D /* ConfigManager.m */,
 				B24703E71A76640E0046EA6D /* ConfigApp.h */,
@@ -602,6 +607,7 @@
 				B29CDFFA1A7210A800C09E3B /* SleepTimerViewController.m in Sources */,
 				B24703F01A76686E0046EA6D /* SplashScreenViewController.m in Sources */,
 				B279E5671A7153BB001E9C07 /* FBFontSymbol.m in Sources */,
+				B24703FE1A787F900046EA6D /* AudioStreamer.m in Sources */,
 				B2C94D5B1A44875900B9CA95 /* Utils.m in Sources */,
 				B2C94D361A4484A200B9CA95 /* AppDelegate.m in Sources */,
 				B2C94D331A4484A200B9CA95 /* main.m in Sources */,

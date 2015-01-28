@@ -91,12 +91,6 @@
 // Please contact the author.
 // Version: 0.2.0.1.
 
-// StreamingKit
-#define COCOAPODS_POD_AVAILABLE_StreamingKit
-#define COCOAPODS_VERSION_MAJOR_StreamingKit 0
-#define COCOAPODS_VERSION_MINOR_StreamingKit 1
-#define COCOAPODS_VERSION_PATCH_StreamingKit 25
-
 // ZGCountDownTimer
 #define COCOAPODS_POD_AVAILABLE_ZGCountDownTimer
 #define COCOAPODS_VERSION_MAJOR_ZGCountDownTimer 2

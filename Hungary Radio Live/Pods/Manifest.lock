@@ -29,7 +29,6 @@ PODS:
   - iOS-Slide-Menu (1.4.4)
   - MarqueeLabel (2.1.0)
   - SCSiriWaveformView (1.0.1)
-  - StreamingKit (0.1.25)
   - SVSegmentedControl@PTEz (0.2.0.1)
   - ZGCountDownTimer (2.0.1)
 
@@ -40,7 +39,6 @@ DEPENDENCIES:
   - iOS-Slide-Menu (= 1.4.4)
   - MarqueeLabel (= 2.1.0)
   - SCSiriWaveformView (= 1.0.1)
-  - StreamingKit (= 0.1.25)
   - SVSegmentedControl@PTEz (= 0.2.0.1)
   - ZGCountDownTimer (= 2.0.1)
 
@@ -51,7 +49,6 @@ SPEC CHECKSUMS:
   iOS-Slide-Menu: 7891c4e4180aac2b23fb2e5459ff61b8691a8496
   MarqueeLabel: ec6165fbef95fd11f411637550196b0cc7cbab03
   SCSiriWaveformView: e0d1a769e396a7c1a0bb05e02b539af2c484c56d
-  StreamingKit: 5b36623e7246cccddb8db3aee79c43bb180a51be
   SVSegmentedControl@PTEz: 83d7dfa736e1a775b4b80e2a3f74167120351e40
   ZGCountDownTimer: fe867dd11f8ffb01b64e56c01143aa0510225cef
 
